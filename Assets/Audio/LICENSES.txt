@@ -1,0 +1,44 @@
+RPG 项目音频素材 · 来源与授权
+下载日期：2026-11-22
+================================================================
+
+【BGM / 背景音乐】目录 Audio/BGM
+作者：Kevin MacLeod (incompetech.com)
+授权：Creative Commons Attribution 4.0 (CC BY 4.0)
+要求：必须署名。可在游戏 Credits 页面写：
+      Music by Kevin MacLeod (incompetech.com)
+      Licensed under Creative Commons: By Attribution 4.0
+      http://creativecommons.org/licenses/by/4.0/
+来源：https://incompetech.com/music/royalty-free/
+
+  Folk_Round.mp3          轻快民谣        建议：渡口白天
+  Achaidh_Cheide.mp3      凯尔特田园      建议：村庄/傍晚
+  Enchanted_Valley.mp3    林间轻柔        建议：森林探索
+  Continue_Life.mp3       安静钢琴        建议：夜晚/营地
+  Master_of_the_Feast.mp3 酒馆欢快        建议：旅舍/商店
+  Lightless_Dawn.mp3      幽暗氛围        建议：遗迹/夜探
+  Five_Armies.mp3         战斗紧张        建议：守卫战斗
+  Frost_Waltz.mp3         冬日华尔兹      建议：雪天
+  Air_Prelude.mp3         弦乐安静        建议：登录/标题
+  Sneaky_Snitch.mp3       鬼祟轻巧        建议：潜入/巡逻
+
+【SFX / 音效】目录 Audio/SFX/80-CC0-RPG-SFX（80 个 ogg）
+作者：rubberduck
+授权：CC0 1.0（公共领域，无需署名，可商用）
+来源：https://opengameart.org/content/80-cc0-rpg-sfx
+内容：blade 挥击 / book 翻书 / chain 链条 / creature_* 生物 /
+      item_coins 金币 / item_gem 宝石 / item_misc 杂物拾取 /
+      item_stone 石头 / item_wood 木材 / lock 锁 / metal 金属 /
+      misc 杂项 / spell* 法术 / stones 碎石 / wood 木料
+
+【Ambience / 环境音】目录 Audio/Ambience
+  amb_rain_loop_1.ogg   雨声循环
+    作者：Kresiek The Furry  授权：CC0 1.0
+    来源：https://opengameart.org/content/amb-rain-loop-1
+  Dark_Rainy_Night.ogg  雨夜雷声
+    作者：kindland  授权：CC0 1.0
+    来源：https://opengameart.org/content/rain-and-thunders-dark-rainy-night
+
+================================================================
+说明：CC0 素材可自由商用、无需署名；CC BY 4.0 必须署名。
+如果以后换掉 Kevin MacLeod 的曲子，记得同步删掉上面那段 Credits。

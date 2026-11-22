@@ -1,0 +1,47 @@
+# ---------- Unity ----------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emory[Cc]aptures/
+[Rr]ecordings/
+
+# 本项目特有的产物（只在仓库根目录生效，别误伤 Assets/Audio）
+/Backups/
+/RPGBuild/
+/Audio/
+*.apk
+*.aab
+*.unitypackage
+
+# ---------- IDE / 生成文件 ----------
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ---------- 系统 ----------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# ---------- 崩溃报告 ----------
+sysinfo.txt
+crashlytics-build.properties

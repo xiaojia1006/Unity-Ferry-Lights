@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80860c5f4d70bf54292e32df1412e4ca, type: 3}
+  m_Name: ChestDefaults
+  m_EditorClassIdentifier: 
+  lootPrefab: {fileID: 7928344877194336444, guid: 25f52266231b8594c9960dbc12bf6d02, type: 3}
+  lootTable: {fileID: 11400000, guid: 83d80d38dad49c04b86ee8c4906f5a6b, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0895e296ffc0374fba8dda8e9226ebc, type: 3}
+  m_Name: BackpackTheme
+  m_EditorClassIdentifier: 
+  parchment: {fileID: 21300000, guid: a38403a3e88e6ce4aa3035b521609efe, type: 3}
+  slot: {fileID: 21300000, guid: 95f0b4e98f8a95f4dada25d48ed07f46, type: 3}
+  ribbon: {fileID: 21300000, guid: 287f982df24e17e42aac0d13adbe23d0, type: 3}
+  button: {fileID: 21300000, guid: 4fee2e22b0eb4c047a6ea20a3960993b, type: 3}
+  font: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
