@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 public sealed class RPG1Frontier : MonoBehaviour
 {
@@ -74,7 +74,7 @@ public sealed class RPG1Frontier : MonoBehaviour
     {
         if(i==0)
         {
-            if(won&&!paid){var inv=InventortyManager.Instance;if(inv==null)return;paid=true;inv.AddItem(hud.gold,28);inv.AddItem(hud.experience,8);hud.Notify("伐木场重启！获得28金币、8经验；本次运行仅结算一次。");return;}
+            if(won&&!paid){var inv=InventortyManager.Instance;if(inv==null)return;paid=true;inv.AddItem(hud.gold,28);inv.AddItem(hud.experience,8);PlayerStats.AddQuest("RPG1.frontier");hud.Notify("伐木场重启！获得28金币、8经验；本次运行仅结算一次。");return;}
             if(Time.time<nextRest){hud.Notify("营火冷却中，剩余 "+Mathf.CeilToInt(nextRest-Time.time)+" 秒。");return;}
             if(Threat(player.transform.position,5)){hud.Notify("附近有敌人，暂时无法休息。");return;}
             if(StatsManager.Instance!=null){StatsManager.Instance.UpdateHealth(12);nextRest=Time.time+30;hud.Notify("休息恢复最多12生命。接下来去东西供能点，重启工事。");}return;

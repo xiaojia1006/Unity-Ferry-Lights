@@ -1,10 +1,10 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-/// <summary>RPG2-only visual day/night. Scene-owned, no changes to quests, collision or actor statistics.</summary>
+/// <summary>RPG2 scene atmosphere. Night combat modifiers are resolved at hit time, without mutating actor statistics.</summary>
 [DefaultExecutionOrder(250)]
 public sealed class DayNight2D : MonoBehaviour
 {
@@ -25,12 +25,12 @@ public sealed class DayNight2D : MonoBehaviour
     sealed class Lamp { public RPG2Point point;public float radius,strength;public Color color;public bool lit; }
     NightCamera2D effect;
     WeatherCycle2D weather;
-    NightAudioLibrary audioLibrary;
     PlayerMovement player;
     TMP_Text badge;
     float clock,beaconPulse,lookup;
     int observedMode=-1;
-    bool ruinsMusic;
+    int badgePhase=-1;
+    static readonly string[] PhaseNames={"白昼","黄昏","夜晚","黎明"};
     static readonly Color NightTint=new Color32(10,26,46,255),WarmTint=new Color32(42,27,18,255);
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)] static void ResetStatics(){Instance=null;}
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)] static void Watch()
@@ -43,7 +43,7 @@ public sealed class DayNight2D : MonoBehaviour
     }
     void Awake()
     {
-        Instance=this;audioLibrary=Resources.Load<NightAudioLibrary>("Night/Audio");
+        Instance=this;
         DiscoverLights();CreateBadge();ReadMode();BindCamera();RefreshVisuals(true);
     }
     void DiscoverLights()
@@ -56,9 +56,9 @@ public sealed class DayNight2D : MonoBehaviour
                 var l=new Lamp{point=p,color=new Color32(255,185,107,255)};
                 switch(p.kind)
                 {
-                    case RPG2Point.Kind.Camp:l.radius=3.6f;l.strength=.55f;break;
-                    case RPG2Point.Kind.Beacon:l.radius=2.6f;l.strength=.5f;l.color=new Color32(255,215,154,255);break;
-                    case RPG2Point.Kind.Inn:l.radius=2.3f;l.strength=.4f;break;
+                    case RPG2Point.Kind.Camp:l.radius=4.3f;l.strength=.55f;break;
+                    case RPG2Point.Kind.Beacon:l.radius=3.2f;l.strength=.5f;l.color=new Color32(255,215,154,255);break;
+                    case RPG2Point.Kind.Inn:l.radius=2.8f;l.strength=.4f;break;
                     case RPG2Point.Kind.Treasure:l.radius=1.8f;l.strength=.35f;l.color=new Color32(201,230,176,255);break;
                     default:continue;
                 }
@@ -127,18 +127,12 @@ public sealed class DayNight2D : MonoBehaviour
         if(!enableAtmosphere)target=0;
         Darkness=snap?target:Mathf.MoveTowards(Darkness,target,Mathf.Max(0,delta)*.23f);
         Tint=snap?tint:Color.Lerp(Tint,tint,1-Mathf.Exp(-delta*1.5f));
-        if(badge!=null)badge.text="苇岸 · "+new[]{"白昼","黄昏","夜晚","黎明"}[(int)Current]+"   [F9]";
+        if(badge!=null&&badgePhase!=(int)Current){badgePhase=(int)Current;badge.text="苇岸 · "+PhaseNames[badgePhase]+(Current==Phase.Night?"  敌攻+3 / 自攻-2":"")+"  [F9]";}
     }
     void SelectMusic()
     {
-        var settings=GlobalSettings.Instance;if(settings==null)return;
-        if(Current!=Phase.Night||audioLibrary==null){settings.ReleaseWorldMusic(this);ruinsMusic=false;return;}
-        if(player!=null)
-        {
-            foreach(var l in lights)if(l.point!=null&&l.point.kind==RPG2Point.Kind.Treasure)
-            {float distance=Vector2.Distance(player.transform.position,l.point.transform.position);ruinsMusic=distance<(ruinsMusic?10:8);break;}
-        }
-        settings.SetWorldMusic(this,ruinsMusic&&audioLibrary.ruins!=null?audioLibrary.ruins:audioLibrary.night);
+        // Track choice now lives in MusicDirector, which also covers rain and snow in every scene.
+        if(MusicDirector.Instance!=null)MusicDirector.Instance.Refresh();
     }
     public void ConfigureMaterial(Material material,Camera camera)
     {
@@ -157,6 +151,10 @@ public sealed class DayNight2D : MonoBehaviour
             lightColors[count]=Color.Lerp(l.color,new Color32(255,234,208,255),snow*.4f);count++;
         }
         ActiveLightCount=count;material.SetInt("_LightCount",count);material.SetVectorArray("_Lights",lightData);material.SetVectorArray("_LightColors",lightColors);
+        // A faint neutral pool keeps the player's feet and nearest obstacle legible, without a portable sun.
+        var playerAt=player!=null?camera.WorldToViewportPoint(player.transform.position):new Vector3(.5f,.5f,-1);
+        float playerRadius=player!=null?Mathf.Abs(camera.WorldToViewportPoint(player.transform.position+Vector3.up*2.6f).y-playerAt.y):0;
+        material.SetVector("_Player",new Vector4(playerAt.x,playerAt.y,playerRadius,playerAt.z>0?1:0));
         int n=0;foreach(var sr in warnings)
         {
             if(n>=4)break;if(sr==null||!sr.enabled||!sr.gameObject.activeInHierarchy)continue;
@@ -171,8 +169,8 @@ public sealed class DayNight2D : MonoBehaviour
         var canvas=go.GetComponent<Canvas>();canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=60;
         var scaler=go.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);
         var label=new GameObject("Reedbank time",typeof(RectTransform),typeof(TextMeshProUGUI));label.transform.SetParent(go.transform,false);
-        var rect=(RectTransform)label.transform;rect.anchorMin=rect.anchorMax=new Vector2(.5f,1);rect.anchoredPosition=new Vector2(0,-30);rect.sizeDelta=new Vector2(260,38);
-        badge=label.GetComponent<TextMeshProUGUI>();badge.font=Resources.Load<TMP_FontAsset>("Settings/Chinese");badge.fontSize=18;badge.alignment=TextAlignmentOptions.Center;badge.color=new Color32(255,237,190,255);badge.outlineWidth=.18f;badge.outlineColor=new Color32(30,42,42,230);badge.raycastTarget=false;
+        var rect=(RectTransform)label.transform;rect.anchorMin=rect.anchorMax=new Vector2(.5f,1);rect.anchoredPosition=new Vector2(0,-30);rect.sizeDelta=new Vector2(490,38);
+        badge=label.GetComponent<TextMeshProUGUI>();badge.font=Resources.Load<TMP_FontAsset>("Settings/Chinese");badge.fontSize=17;badge.alignment=TextAlignmentOptions.Center;badge.color=new Color32(255,237,190,255);badge.outlineWidth=.18f;badge.outlineColor=new Color32(30,42,42,230);badge.raycastTarget=false;
     }
     void OnDestroy()
     {

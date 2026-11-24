@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy_Combat : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class Enemy_Combat : MonoBehaviour
             return;
 
         lastAttackTime = Time.time;
+
+        // The swing itself makes noise whether or not it connects, so the sound belongs here
+        // instead of after the range and health checks (which left a miss completely silent).
+        Sfx.EnemySwing();
 
         PlayerMovement movement = FindObjectOfType<PlayerMovement>();
 
@@ -39,9 +43,8 @@ public class Enemy_Combat : MonoBehaviour
         if (health == null)
             return;
 
-        health.ChangeHealth(-damage);
+        health.ChangeHealth(-NightCombat2D.EnemyDamage(damage));
         movement.Knockback(transform);
-        Sfx.EnemySwing();
     }
 
     private Vector2 GetFeetPosition(Transform target)

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -219,6 +219,7 @@ public class QuestManager : MonoBehaviour
         completedQuests.Add(questSo);
         foreach (var reward in rewards)
             inventory.AddItem(reward.Key, reward.Value);
+        PlayerStats.AddQuest("Legacy."+UnityEngine.SceneManagement.SceneManager.GetActiveScene().name+"."+questSo.name);
         return true;
     }
 

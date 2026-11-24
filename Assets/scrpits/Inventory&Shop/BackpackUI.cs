@@ -96,6 +96,13 @@ public class BackpackUI : MonoBehaviour
     {
         var text = Rect(value,parent,pos,size).gameObject.AddComponent<TextMeshProUGUI>();
         text.font = theme.font != null ? theme.font : TMP_Settings.defaultFontAsset;
+        // 背包原来用的是纯拉丁字体，中文物品描述会渲染成方块，这里挂上中文字体作为回退
+        var chinese = Resources.Load<TMP_FontAsset>("Settings/Chinese");
+        if (chinese != null && text.font != null)
+        {
+            if (text.font.fallbackFontAssetTable == null) text.font.fallbackFontAssetTable = new System.Collections.Generic.List<TMP_FontAsset>();
+            if (!text.font.fallbackFontAssetTable.Contains(chinese)) text.font.fallbackFontAssetTable.Add(chinese);
+        }
         text.text = value; text.fontSize = fontSize;
         text.color = new Color32(36,37,40,255); text.alignment = TextAlignmentOptions.Center;
         text.raycastTarget = false; text.enableWordWrapping = true;
@@ -263,7 +270,7 @@ public class BackpackUI : MonoBehaviour
         else description.text="SELECT AN ITEM\n\nDOUBLE CLICK TO USE\nRIGHT CLICK TO DROP 1";
         useButton.interactable=IsUsable(item); dropButton.interactable=item != null;
         var s=StatsManager.Instance; var exp=FindObjectOfType<ExpManager>();
-        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\nHP "+s.currentHealth+" / "+s.maxHealth+"\nDAMAGE "+s.damage+"   SPEED "+s.speed+"\nGOLD "+inventory.gold;
+        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\nHP "+s.currentHealth+" / "+s.maxHealth+"\nDAMAGE "+NightCombat2D.PlayerDamage(s.damage)+"   SPEED "+s.speed+"\nGOLD "+inventory.gold;
     }
 
     private void UpdatePortrait()

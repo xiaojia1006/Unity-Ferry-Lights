@@ -3,8 +3,8 @@ public static class LoginSession
 {
     public static string Account { get; private set; }
     public static string Token { get; private set; }
-    public static void Set(string account, string token) { Account = account; Token = token; }
-    public static void Clear() { Account = null; Token = null; }
+    public static void Set(string account, string token) { Account = account; Token = token; PlayerStats.ResetStamina(); }
+    public static void Clear() { Account = null; Token = null; PlayerStats.ResetStamina(); }
     [UnityEngine.RuntimeInitializeOnLoadMethod(UnityEngine.RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void Reset() { Account = null; Token = null; }
 }

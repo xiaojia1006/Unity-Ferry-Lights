@@ -1,4 +1,4 @@
-Shader "Rpg/NightAtmosphere"
+﻿Shader "Rpg/NightAtmosphere"
 {
     Properties { _MainTex ("World", 2D) = "white" {} }
     SubShader
@@ -14,6 +14,7 @@ Shader "Rpg/NightAtmosphere"
             sampler2D _MainTex;
             float4 _MainTex_TexelSize;
             float4 _Tint;
+            float4 _Player;
             float _Darkness, _Aspect, _Snow, _Pulse;
             int _LightCount, _WarningCount;
             float4 _Lights[8]; // viewport center, viewport vertical radius, intensity
@@ -35,7 +36,7 @@ Shader "Rpg/NightAtmosphere"
                     if(n>=_LightCount)break;
                     float2 delta=(uv-_Lights[n].xy)*float2(_Aspect,1)/max(.0001,_Lights[n].z);
                     float distance=length(delta);
-                    float falloff=pow(saturate(1-distance),2);
+                    float falloff=1-smoothstep(.06,1,distance);
                     float light=falloff*_Lights[n].w;
                     illumination+=light;
                     warmth+=_LightColors[n].rgb*light;
@@ -47,11 +48,23 @@ Shader "Rpg/NightAtmosphere"
                     float d=length((uv-_Warnings[w].xy)/max(float2(.0001,.0001),_Warnings[w].zw));
                     safety=max(safety,1-smoothstep(.9,1.18,d));
                 }
-                float night=saturate(_Darkness/.4);
-                float localDark=amount*(1-saturate(illumination*1.75))*(1-safety);
-                float3 result=lerp(world.rgb,_Tint.rgb,localDark);
-                // Warm pool of actual ground illumination, rather than an opaque circle over the art.
-                result+=warmth*.075*night*lerp(1,.6,_Snow)*(1-safety);
+                float night=saturate(_Darkness/.45);
+                float lamp=saturate(illumination*1.85);
+                float2 playerDelta=(uv-_Player.xy)*float2(_Aspect,1)/max(.0001,_Player.z);
+                float nearby=(1-smoothstep(.08,1,length(playerDelta)))*_Player.w;
+                // Preserve the painted palette and dark silhouettes instead of mixing in grey luminance.
+                float shade=saturate(amount/.5)*(1-lamp*.83)*(1-nearby*.20);
+                float3 moonFilter=lerp(float3(.26,.36,.55),float3(.34,.45,.62),_Snow*.4);
+                float3 moonlit=world.rgb*lerp(float3(1,1,1),moonFilter,shade);
+                // Gentle S contrast protects black outlines and stops bright paths reading as daytime.
+                float3 contrasted=saturate((moonlit-.055*night)*(1+night*.09));
+                float3 warmGround=world.rgb*float3(1.04,.83,.57);
+                float3 result=lerp(contrasted,warmGround,lamp*night*.74);
+                result+=warmth*.085*night*lerp(1,.55,_Snow);
+                result+=world.rgb*_Pulse*.7;
+                // Keep actual red warning pixels readable; don't reveal the entire square beneath them.
+                float redWarning=safety*smoothstep(.12,.35,world.r-max(world.g,world.b));
+                result=lerp(result,world.rgb,redWarning);
                 return float4(saturate(result),world.a);
             }
             ENDCG

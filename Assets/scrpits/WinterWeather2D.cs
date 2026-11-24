@@ -34,8 +34,8 @@ public sealed class WinterWeather2D : MonoBehaviour
     private Material snowMaterial;
     private Material flakeMaterial;
     private MaterialPropertyBlock properties;
-    private float nextRefresh;
     private float previousTime;
+    private float nextRefresh;
     private float snowBlend = 1;
     private float rainBlend;
     private bool weatherDirty;
@@ -199,7 +199,7 @@ public sealed class WinterWeather2D : MonoBehaviour
             snow.randomSeed = (uint)(1531 + i * 71);
             var main = snow.main;
             main.loop = true;
-            main.duration = 12;
+            main.duration = 12;    
             main.startLifetime = 12;
             main.startSpeed = 0;
             main.startSize = new ParticleSystem.MinMaxCurve(0.035f + i * 0.025f, 0.06f + i * 0.04f);
@@ -215,7 +215,7 @@ public sealed class WinterWeather2D : MonoBehaviour
             velocity.space = ParticleSystemSimulationSpace.World;
             velocity.x = wind * (0.65f + i * 0.45f);
             velocity.y = -(0.45f + i * 0.38f);
-            velocity.z = 0;
+            velocity.z = 0; 
             var color = snow.colorOverLifetime;
             color.enabled = true;
             var fade = new Gradient();

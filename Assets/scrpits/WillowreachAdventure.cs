@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -72,7 +72,7 @@ public sealed class WillowreachAdventure : MonoBehaviour
         var inv=InventortyManager.Instance;
         var reward=new Dictionary<ItemSO,int>{{gold,integrity==3?24:16},{mushroom,2}};
         if(!inv.CanAddItems(reward)){world.Notify("背包不足，委托奖励保留。腾出空间后再来领取。");return false;}
-        foreach(var pair in reward)inv.AddItem(pair.Key,pair.Value);
+        foreach(var pair in reward)inv.AddItem(pair.Key,pair.Value);PlayerStats.AddQuest("Willowreach.delivery."+deliveries);
         ready=false;deliveries++;world.Notify("完成委托 "+deliveries+"/3：金币"+(integrity==3?24:16)+"、蘑菇2。");return true;
     }
     public void BeginPuzzle()
@@ -96,7 +96,7 @@ public sealed class WillowreachAdventure : MonoBehaviour
         var inv=InventortyManager.Instance;
         if(!inv.CanAddItems(new Dictionary<ItemSO,int>{{gold,25},{mushroom,3}}))
         {world.Notify("谜题已解开，背包满。腾出空间后触碰任意符石领奖。");return false;}
-        inv.AddItem(gold,25);inv.AddItem(mushroom,3);puzzleSolved=true;
+        inv.AddItem(gold,25);inv.AddItem(mushroom,3);puzzleSolved=true;PlayerStats.AddQuest("Willowreach.runes");
         world.Notify("四音共鸣！获得金币25、蘑菇3。此宝藏只能领取一次。");return true;
     }
     private void Update()

@@ -6,6 +6,10 @@ public class ShopKeeper : MonoBehaviour
 {
     public static ShopKeeper currentShopKeeper;
 
+    // A static keeper reference must never outlive the scene that owns it.
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics(){ currentShopKeeper = null; }
+
     public Animator anim;
     public bool PlayerInRange;
     public ShopManager shopManager;
@@ -23,10 +27,24 @@ public class ShopKeeper : MonoBehaviour
     public static event Action<ShopManager, bool> OnShopStateChanged;
 
     private int handledFrame=-1;
+    private bool nearFallback;
+    private PlayerMovement nearbyPlayer;
+
+    // Triggers are the only interaction in the project that depends on a physics overlap event;
+    // after a scene round trip the player can be standing inside the ring with no Enter callback,
+    // so distance is used as the same fallback every other interaction already uses.
+    private bool InReachDistance()
+    {
+        if (nearbyPlayer == null || !nearbyPlayer.isActiveAndEnabled)
+            nearbyPlayer = FindObjectOfType<PlayerMovement>();
+        return nearbyPlayer != null &&
+               Vector2.Distance(nearbyPlayer.transform.position, transform.position) < 1.9f;
+    }
 
     private void Update()
     {
-        if (BackpackUI.BlocksOtherInput || (!PlayerInRange && !isShopOpen))
+        nearFallback = !isShopOpen && InReachDistance();
+        if (BackpackUI.BlocksOtherInput || (!PlayerInRange && !nearFallback && !isShopOpen))
             return;
 
         // E is the game-wide interaction key; K stays as the original shop key.
@@ -151,5 +169,7 @@ public class ShopKeeper : MonoBehaviour
     {
         if (isShopOpen)
             CloseShop();
+        else if (currentShopKeeper == this)
+            currentShopKeeper = null;
     }
 }

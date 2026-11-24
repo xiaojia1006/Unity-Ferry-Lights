@@ -126,9 +126,9 @@ public sealed class RainFootsteps2D : MonoBehaviour
     public void AdvanceThunder(float dt)
     {
         bool raining=weather.currentWeather==WeatherCycle2D.Weather.Rain&&weather.RainAmount>.5f;
-        audioSource.volume=thunderVolume*weather.RainAmount*GlobalSettings.EnvironmentVolume;
+        audioSource.volume=Mathf.Max(thunderVolume,.42f)*weather.RainAmount*GlobalSettings.EnvironmentVolume;
         if(!raining){wasRaining=false;if(weather.RainAmount<.05f)audioSource.Stop();return;}
-        if(!wasRaining){thunderRemaining=UnityEngine.Random.Range(18f,35f);wasRaining=true;return;}
+        if(!wasRaining){thunderRemaining=UnityEngine.Random.Range(7f,15f);wasRaining=true;return;}
         thunderRemaining-=Mathf.Max(0,dt);
         if(thunderRemaining>0||audioSource.isPlaying)return;
         audioSource.clip=thunder[UnityEngine.Random.Range(0,thunder.Length)];audioSource.pitch=UnityEngine.Random.Range(.92f,1.05f);audioSource.Play();ThunderCount++;

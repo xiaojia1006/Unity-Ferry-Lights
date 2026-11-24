@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 // Optional side quest: bones -> flute -> lead living sheep over dry bridges -> weather treasure.
@@ -50,7 +50,7 @@ public sealed class WillowreachPastoral : MonoBehaviour
         var companions=sheep.Where(s=>s!=null&&Vector2.Distance(s.transform.position,pasture.transform.position)<3.2f).ToArray();
         if(companions.Length==0){world.Notify("带至少一只羊靠近草场，羊会闻出埋藏的补给。");return false;}
         var inv=InventortyManager.Instance;if(inv==null)return false;
-        inv.AddItem(gold,12);pasture.completed=true;
+        inv.AddItem(gold,12);pasture.completed=true;PlayerStats.AddQuest("Willowreach.pasture."+pasture.name);
         if(pasture.indicator!=null)pasture.indicator.color=new Color(.65f,1,.75f);
         foreach(var s in companions)s.Graze(5);
         if(Found==pastures.Length){inv.AddItem(gold,15);world.Notify("三处草场宝藏全部找到！本处金币12，另获牧羊完成奖励15金币。");}

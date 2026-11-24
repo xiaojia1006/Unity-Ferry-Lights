@@ -51,7 +51,9 @@ public partial class InventortyManager : MonoBehaviour
             pending[key] = (pending.ContainsKey(key) ? pending[key] : 0) + slot.quantity;
             slot.itemSO = null; slot.quantity = 0; slot.UpdateUI();
         }
+        PickupSfx.Suppress = true;
         foreach (var entry in pending) AddItem(entry.Key, entry.Value);
+        PickupSfx.Suppress = false;
     }
 
     // Reserve capacity for the whole reward batch before adding anything.
@@ -119,6 +121,7 @@ public partial class InventortyManager : MonoBehaviour
             return quantity;
 
         itemSO = itemSO.InventoryMaterial;
+        PickupSfx.Play(itemSO);
 
         if (itemSO.isGold)
         {

@@ -10188,7 +10188,7 @@ Tilemap:
       - {fileID: 1343198209, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1613842244, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -1471964140, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: -15, z: 0}
@@ -10748,7 +10748,7 @@ Tilemap:
       - {fileID: -427563289, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -165382313, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1472154532, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 3, y: -13, z: 0}
@@ -10874,7 +10874,7 @@ Tilemap:
       - {fileID: -427563289, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -165382313, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1472154532, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: -13, z: 0}
@@ -11042,7 +11042,7 @@ Tilemap:
       - {fileID: 1343198209, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1613842244, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -1471964140, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -10, y: -11, z: 0}
@@ -11126,7 +11126,7 @@ Tilemap:
       - {fileID: 244279269, guid: 2abb47065be1bf1409e2fe34d30e09f7, type: 3}
       - {fileID: -1482536369, guid: 2abb47065be1bf1409e2fe34d30e09f7, type: 3}
       - {fileID: 926710552, guid: 2abb47065be1bf1409e2fe34d30e09f7, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: -11, z: 0}
@@ -45680,7 +45680,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -7, z: 0}
@@ -45700,7 +45700,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -7, z: 0}
@@ -45880,7 +45880,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -4, z: 0}
@@ -46460,7 +46460,7 @@ Tilemap:
       - {fileID: -1273670736, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 948593290, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 657074568, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: 8, z: 0}
@@ -46510,7 +46510,7 @@ Tilemap:
       - {fileID: -1984773533, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 657874939, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1279268802, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: 8, z: 0}
@@ -55339,7 +55339,7 @@ Tilemap:
       - {fileID: -1665277572, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 254123623, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1412742966, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -11, z: 0}
@@ -55353,7 +55353,7 @@ Tilemap:
       - {fileID: -1665277572, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 254123623, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1412742966, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -11, z: 0}
@@ -55395,7 +55395,7 @@ Tilemap:
       - {fileID: -1665277572, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 254123623, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1412742966, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: -11, z: 0}
@@ -55745,7 +55745,7 @@ Tilemap:
       - {fileID: -236444871, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1846508132, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1621238540, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -5, z: 0}
@@ -56571,7 +56571,7 @@ Tilemap:
       - {fileID: -1952890319, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 164792147, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -2136538854, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -78135,216 +78135,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46a75e5fce54d7d44bdae63bbc82d10d, type: 3}
---- !u!213 &1249825323
-Sprite:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Generated winding creek
-  m_Rect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 512
-    height: 512
-  m_Offset: {x: 0, y: 0}
-  m_Border: {x: 0, y: 0, z: 0, w: 0}
-  m_PixelsToUnits: 512
-  m_Pivot: {x: 0.5, y: 0.5}
-  m_Extrude: 0
-  m_IsPolygon: 0
-  m_AtlasName: 
-  m_PackingTag: 
-  m_RenderDataKey:
-    00000000000000000000000000000000: 0
-  m_AtlasTags: []
-  m_SpriteAtlas: {fileID: 0}
-  m_RD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_AtlasRD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_PhysicsShape: []
-  m_Bones: []
-  m_SpriteID: 
 --- !u!1 &1252777891
 GameObject:
   m_ObjectHideFlags: 0
@@ -84312,7 +84102,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -4, z: 0}
@@ -84532,7 +84322,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -3, y: 0, z: 0}
@@ -84582,7 +84372,7 @@ Tilemap:
       - {fileID: 2119118576, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1747428048, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -917769562, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: 1, z: 0}
@@ -84892,7 +84682,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: 6, z: 0}
@@ -85092,7 +84882,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: 9, z: 0}
@@ -85142,7 +84932,7 @@ Tilemap:
       - {fileID: -178742696, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -997076363, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1115207720, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -86896,7 +86686,7 @@ MonoBehaviour:
   rainWeight: 3
   snowWeight: 5
   rainIntensity: 1.25
-  secondsRemaining: 109.45605
+  secondsRemaining: 110.85347
 --- !u!1001 &1463562959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87395,7 +87185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1249825323}
+  m_Sprite: {fileID: 1489242452}
   m_Color: {r: 0.3529412, g: 0.69803923, b: 0.6784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87858,6 +87648,216 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!213 &1489242452
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Generated winding creek
+  m_Rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 512
+    height: 512
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 512
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 0
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    00000000000000000000000000000000: 0
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
 --- !u!1 &1493636532
 GameObject:
   m_ObjectHideFlags: 0

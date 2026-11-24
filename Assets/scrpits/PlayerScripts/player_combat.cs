@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class player_combat : MonoBehaviour
 {
@@ -55,7 +55,7 @@ public class player_combat : MonoBehaviour
             if (health == null)
                 continue;
 
-            health.ChangeHealth(-StatsManager.Instance.damage);
+            health.ChangeHealth(-NightCombat2D.PlayerDamage(StatsManager.Instance.damage));
             Sfx.Impact();
 
             Enemy_Knockback knockback =

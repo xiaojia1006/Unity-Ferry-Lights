@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -165,7 +165,12 @@ public sealed partial class RPG2Adventure
         int current=Enumerable.Range(0,4).FirstOrDefault(i=>!QuestDone(i));tracked.text="苇岸渡口\n"+QuestTitle(current)+"\nR 查看目标 · Tab 地图";
         if(MenuOpen)RefreshQuest();
         promptText.transform.parent.gameObject.SetActive(!Busy&&(NearestIndex>=0||fishing!=null));
-        if(fishing!=null)promptText.text=Time.time>=fishReady?"鱼儿咬钩！现在按 E 收竿":"等待水面的动静… 暂时不要收竿";
-        else if(NearestIndex>=0)promptText.text=Hint(points[NearestIndex]);
+        if(fishing!=null)
+        {
+            bool biting=Time.time>=fishReady;
+            promptText.text=biting?"鱼儿咬钩！现在按 E 收竿":"等待水面的动静… 暂时不要收竿";
+            promptText.color=biting?new Color32(176,58,36,255):new Color32(62,54,43,255);
+        }
+        else if(NearestIndex>=0){promptText.text=Hint(points[NearestIndex]);promptText.color=new Color32(62,54,43,255);}
     }
 }

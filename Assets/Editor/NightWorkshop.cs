@@ -20,6 +20,7 @@ public static class NightWorkshop
         {
             if(command=="setup")Setup();
             else if(command=="test")Test();
+            else if(command=="combat-test")CombatTest();
             else if(command=="day")DayNight2D.Instance.SetPhase(DayNight2D.Phase.Day);
             else if(command=="night")DayNight2D.Instance.SetPhase(DayNight2D.Phase.Night);
             else if(command=="capture")Capture("Logs/Night-RPG2.png");
@@ -28,6 +29,8 @@ public static class NightWorkshop
             else if(command=="capture-weather")WeatherView();
             else if(command=="capture-settings"){GlobalSettings.Instance.SetOpen(true);GlobalSettings.Instance.SendMessage("ShowPage",1);Capture("Logs/Night-Settings.png");}
             else if(command=="status")Status();
+            else if(command=="step"){EditorApplication.isPaused=false;Application.runInBackground=true;EditorApplication.QueuePlayerLoopUpdate();}
+            else if(command=="capture-warning")WarningView();
             else throw new Exception("Unknown night request: "+command);
             File.WriteAllText("Logs/NightRequest.txt",command+" PASS");File.AppendAllText("Logs/NightChecks.txt",DateTime.Now+" "+command+" PASS\n");
         }
@@ -71,11 +74,59 @@ public static class NightWorkshop
             g.Data.dayNightMode=2;n.Advance(0);seconds=n.PhaseSeconds;n.Advance(30);Require(n.Current==DayNight2D.Phase.Night&&n.PhaseSeconds==seconds,"Fixed night preference broken");
             var bank=Resources.Load<NightAudioLibrary>("Night/Audio");Require(bank!=null&&bank.night!=null&&bank.ruins!=null,"Build music references missing");
             g.AdvanceMusic(2);Require(g.CurrentMusic==bank.night,"Night music not connected to global player");
+            var player=UnityEngine.Object.FindObjectOfType<PlayerMovement>();var before=player.transform.position;var rb=player.GetComponent<Rigidbody2D>();
+            try{player.transform.position=UnityEngine.Object.FindObjectsOfType<RPG2Point>().First(p=>p.kind==RPG2Point.Kind.Treasure).transform.position;n.SetPhase(DayNight2D.Phase.Night);g.AdvanceMusic(2);Require(g.CurrentMusic==bank.ruins,"Ruins music not selected");}
+            finally{player.transform.position=before;rb.position=before;}
             n.SetPhase(DayNight2D.Phase.Day);g.AdvanceMusic(2);Require(g.CurrentMusic!=bank.night&&g.CurrentMusic!=bank.ruins,"Day music not restored");
             Require(Time.timeScale==timeScale,"Night changed pause state");
             Require(UnityEngine.Object.FindObjectsOfType<DayNight2D>().Length==1,"Duplicate night roots");
         }
         finally{g.Data.dayNightMode=original;n.Advance(0);n.SetPhase(DayNight2D.Phase.Day);g.AdvanceMusic(2);g.Save();}
+    }
+    static void CombatTest()
+    {
+        var n=DayNight2D.Instance;Require(n!=null,"RPG2 required");var stats=StatsManager.Instance;
+        var w=UnityEngine.Object.FindObjectOfType<RPG2Adventure>();var player=w.Player;var guard=w.guards[0];
+        var health=guard.GetComponent<Enemy_Health>();var melee=player.GetComponent<player_combat>();
+        var flags=System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic;
+        int mode=GlobalSettings.Instance.Data.dayNightMode,damage=stats.damage,hp=stats.currentHealth,enemyHp=health.currenetHealth,enemyMax=health.maxHealth;
+        var playerAt=player.transform.position;var guardAt=guard.transform.position;var attackPoint=melee.attackPoint.position;
+        bool invulnerable=health.invulnerable,meleeEnabled=melee.enabled;float range=stats.weaponRange,scale=Time.timeScale;var legacy=guard.GetComponent<Enemy_Movement>();var legacyState=legacy.enemyState;var mask=melee.enemyLayer;
+        var saved=new Dictionary<string,object>();foreach(var name in new[]{"attack","hit","targetAt","cooldown"})saved[name]=typeof(RPG2Guard).GetField(name,flags).GetValue(guard);
+        try
+        {
+            GlobalSettings.Instance.SetOpen(false);Time.timeScale=1;GlobalSettings.Instance.Data.dayNightMode=0;n.Advance(0);
+            stats.damage=7;stats.weaponRange=.45f;health.invulnerable=false;health.maxHealth=100;health.currenetHealth=100;melee.enabled=true;
+            melee.enemyLayer=1<<guard.gameObject.layer;melee.attackPoint.position=guard.GetComponent<Collider2D>().bounds.center;Physics2D.SyncTransforms();
+            n.SetPhase(DayNight2D.Phase.Day);melee.DealDamage();Require(health.currenetHealth==93,"Day melee must deal 7");
+            n.SetPhase(DayNight2D.Phase.Night);melee.DealDamage();Require(health.currenetHealth==88,"Night melee must deal 5");
+            Require(NightCombat2D.PlayerDamage(1)==1&&NightCombat2D.PlayerDamage(2)==1,"Player minimum damage must be 1");
+            Require(NightCombat2D.PlayerDamage(0)==0&&NightCombat2D.EnemyDamage(0)==0,"Zero damage must remain zero");
+            for(int i=0;i<8;i++){n.SetPhase(DayNight2D.Phase.Day);n.SetPhase(DayNight2D.Phase.Night);}Require(stats.damage==7,"Repeated night transitions mutated base stats");
+            legacy.enemyState=EnemyState.Idle;
+            guard.transform.position=guard.home;guard.GetComponent<Rigidbody2D>().position=guard.home;
+            player.transform.position=(Vector3)guard.home+Vector3.right*.7f;player.rb.position=player.transform.position;Physics2D.SyncTransforms();
+            foreach(var phase in new[]{DayNight2D.Phase.Day,DayNight2D.Phase.Night,DayNight2D.Phase.Dawn})
+            {
+                stats.currentHealth=30;n.SetPhase(phase);
+                typeof(RPG2Guard).GetField("attack",flags).SetValue(guard,Time.time-.7f);
+                typeof(RPG2Guard).GetField("hit",flags).SetValue(guard,false);
+                typeof(RPG2Guard).GetField("targetAt",flags).SetValue(guard,(Vector2)player.transform.position);
+                typeof(RPG2Guard).GetMethod("Update",flags).Invoke(guard,null);
+                Require(stats.currentHealth==30-(phase==DayNight2D.Phase.Night?5:2),"Guard hit amount incorrect for "+phase);
+            }
+            n.SetPhase(DayNight2D.Phase.Day);Require(NightCombat2D.PlayerDamage(7)==7,"Player damage not restored at dawn/day");
+            File.AppendAllText("Logs/NightChecks.txt","Actual melee hit: day 7 / night 5; actual guard hit: day 2 / night 5 / dawn 2; repeated transitions preserve base stats.\n");
+        }
+        finally
+        {
+            foreach(var pair in saved)typeof(RPG2Guard).GetField(pair.Key,flags).SetValue(guard,pair.Value);
+            legacy.enemyState=legacyState;guard.SendMessage("OnDisable");guard.GetComponent<Animator>().SetBool("isAttacking",false);
+            stats.damage=damage;stats.currentHealth=hp;stats.weaponRange=range;health.currenetHealth=enemyHp;health.maxHealth=enemyMax;health.invulnerable=invulnerable;
+            player.transform.position=playerAt;player.rb.position=playerAt;player.rb.velocity=Vector2.zero;guard.transform.position=guardAt;guard.GetComponent<Rigidbody2D>().position=guardAt;
+            melee.attackPoint.position=attackPoint;melee.enemyLayer=mask;melee.enabled=meleeEnabled;
+            player.GetComponent<PlayerHealth>().RefreshHealthText();GlobalSettings.Instance.Data.dayNightMode=mode;n.Advance(0);n.SetPhase(DayNight2D.Phase.Day);Time.timeScale=scale;
+        }
     }
     static void Status()
     {
@@ -90,6 +141,13 @@ public static class NightWorkshop
         var beacon=UnityEngine.Object.FindObjectsOfType<RPG2Point>().First(p=>p.kind==RPG2Point.Kind.Beacon&&p.number==0);bool before=beacon.glow.activeSelf;
         var camera=Camera.main;var at=camera.transform.position;camera.transform.position=new Vector3(beacon.transform.position.x,beacon.transform.position.y,-10);
         try{beacon.SetLit(true);n.Advance(.3f);Capture("Logs/Night-Beacon.png");}finally{beacon.SetLit(before);camera.transform.position=at;n.Advance(.3f);}
+    }
+    static void WarningView()
+    {
+        var sr=UnityEngine.Object.FindObjectsOfType<SpriteRenderer>(true).First(r=>r.name=="Guard attack telegraph");
+        bool active=sr.gameObject.activeSelf;var pos=sr.transform.position;var scale=sr.transform.localScale;var camera=Camera.main;var camPos=camera.transform.position;
+        try{sr.gameObject.SetActive(true);sr.transform.position=new Vector3(-2,-9,0);sr.transform.localScale=new Vector3(1.8f/sr.sprite.bounds.size.x,1/sr.sprite.bounds.size.y,1);camera.transform.position=new Vector3(-2,-9,-10);DayNight2D.Instance.SetPhase(DayNight2D.Phase.Day);Capture("Logs/Day-Warning.png");DayNight2D.Instance.SetPhase(DayNight2D.Phase.Night);Capture("Logs/Night-Warning.png");}
+        finally{sr.gameObject.SetActive(active);sr.transform.position=pos;sr.transform.localScale=scale;camera.transform.position=camPos;}
     }
     static void WeatherView()
     {
@@ -119,3 +177,6 @@ public static class NightWorkshop
         }
     }
 }
+
+
+

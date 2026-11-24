@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 
 [DefaultExecutionOrder(160)]
@@ -42,9 +42,9 @@ public sealed class RPG2Guard : MonoBehaviour
             warning.gameObject.SetActive(false);
             if(!hit)
             {
-                hit=true;animator.SetBool("isAttacking",true);
+                hit=true;animator.SetBool("isAttacking",true);Sfx.EnemySwing();
                 if(Vector2.Distance(target,targetAt)<1&&Vector2.Distance(at,target)<1.9f&&Clear(at,target))
-                {world.Player.GetComponent<PlayerHealth>().ChangeHealth(-2);world.Player.Knockback(transform);}
+                {world.Player.GetComponent<PlayerHealth>().ChangeHealth(-NightCombat2D.EnemyDamage(2));world.Player.Knockback(transform);}
             }
             if(elapsed>1.05f){attack=-1;cooldown=Time.time+.65f;animator.SetBool("isAttacking",false);}return;
         }

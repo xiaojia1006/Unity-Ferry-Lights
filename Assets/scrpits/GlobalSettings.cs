@@ -11,7 +11,7 @@ public sealed class GlobalSettings : MonoBehaviour
 {
     [Serializable] public sealed class Preferences
     {
-        public float master=.8f, music=.35f, effects=.8f;
+        public float master=.8f, music=.35f, effects=.8f, footstep=.75f, pickup=.85f;
         public bool mute, ambient=true, loginMusic=true, fullscreen=true, vsync=true, fpsCounter;
         public int frameRate=60, movement;
         public int dayNightMode; // 0 automatic (legacy default), 1 day, 2 night; RPG2 only
@@ -20,14 +20,18 @@ public sealed class GlobalSettings : MonoBehaviour
     public static GlobalSettings Instance { get; private set; }
     public static bool BlocksInput { get { return Instance!=null && (Instance.IsOpen || Instance.consumedFrame==Time.frameCount); } }
     public static float EnvironmentVolume { get { return Instance==null?1:Instance.Data.ambient?Instance.Data.effects:0; } }
+    public static float FootstepVolume { get { return Instance==null?.75f:Instance.Data.footstep; } }
+    public static float PickupVolume { get { return Instance==null?.85f:Instance.Data.pickup; } }
     public Preferences Data { get; private set; }
     public bool IsOpen { get; private set; }
+    // Weather ducks the score so rain and footsteps stay audible in front of it.
+    public float WorldDuck=1f;
     int consumedFrame=-1, page;
     GameObject panel, content;
     TMP_FontAsset font;
     TMP_Text account, fps;
     AudioSource music, click;
-    AudioClip song, tick;
+    AudioClip song, tick, fallbackSong, daySong, loginSong;
     UnityEngine.Object worldMusicOwner;
     AudioClip worldMusic;
     float musicFade=1f;
@@ -44,13 +48,30 @@ public sealed class GlobalSettings : MonoBehaviour
         if(Instance!=null){Destroy(gameObject);return;} Instance=this; DontDestroyOnLoad(gameObject);
         Data=new Preferences();
         try{if(PlayerPrefs.HasKey(StorageKey))Data=JsonUtility.FromJson<Preferences>(PlayerPrefs.GetString(StorageKey))??new Preferences();}catch(Exception){Data=new Preferences();}
-        Data.master=SafeVolume(Data.master,.8f);Data.music=SafeVolume(Data.music,.35f);Data.effects=SafeVolume(Data.effects,.8f);
+        // Saves written before the ambience and login-music fields existed deserialize them as false,
+        // which silently muted rain and thunder. Missing fields are treated as their intended default.
+        string saved=PlayerPrefs.GetString(StorageKey,string.Empty);
+        if(saved.Length>0)
+        {
+            if(!saved.Contains("\"ambient\""))Data.ambient=true;
+            if(!saved.Contains("\"loginMusic\""))Data.loginMusic=true;
+            if(!saved.Contains("\"footstep\""))Data.footstep=.75f;
+            if(!saved.Contains("\"pickup\""))Data.pickup=.85f;
+            if(!saved.Contains("\"vsync\""))Data.vsync=true;
+            if(!saved.Contains("\"fullscreen\""))Data.fullscreen=true;
+        }
+        Data.master=SafeVolume(Data.master,.8f);Data.music=SafeVolume(Data.music,.35f);Data.effects=SafeVolume(Data.effects,.8f);Data.footstep=SafeVolume(Data.footstep,.75f);Data.pickup=SafeVolume(Data.pickup,.85f);
         Data.frameRate=Data.frameRate==30||Data.frameRate==60||Data.frameRate==120?Data.frameRate:60;Data.movement=Mathf.Clamp(Data.movement,0,2);Data.dayNightMode=Mathf.Clamp(Data.dayNightMode,0,2);
         font=Resources.Load<TMP_FontAsset>("Settings/Chinese");
         CreateAudio();Build();Apply();SceneManager.sceneLoaded+=SceneLoaded;
     }
     static float SafeVolume(float n,float fallback){return float.IsNaN(n)||float.IsInfinity(n)?fallback:Mathf.Clamp01(n);}
-    void SceneLoaded(Scene scene,LoadSceneMode mode){EnsureEventSystem();ApplyAudio();}
+    void SceneLoaded(Scene scene,LoadSceneMode mode)
+    {
+        EnsureEventSystem();
+        song=scene.name=="Login"&&loginSong!=null?loginSong:(daySong!=null?daySong:fallbackSong);
+        ApplyAudio();
+    }
     void EnsureEventSystem()
     {if(EventSystem.current==null){var e=new GameObject("Settings EventSystem");e.AddComponent<EventSystem>();e.AddComponent<StandaloneInputModule>();}}
     void Update()
@@ -82,7 +103,7 @@ public sealed class GlobalSettings : MonoBehaviour
     void Changed(){Apply();Save();}
     void ApplyAudio()
     {
-        if(music==null)return;music.volume=Data.music*.22f*musicFade;click.volume=Data.effects*.28f;
+        if(music==null)return;music.volume=Data.music*.3f*musicFade*WorldDuck;click.volume=Data.effects*.28f;
         bool shouldPlay=SceneManager.GetActiveScene().name!="Login"||Data.loginMusic;
         if(shouldPlay&&!music.isPlaying)music.Play();else if(!shouldPlay)music.Stop();
     }
@@ -116,7 +137,14 @@ public sealed class GlobalSettings : MonoBehaviour
             float envelope=Mathf.Min(1,local*12)*Mathf.Exp(-local*3);
             samples[i]=(Mathf.Sin(t*frequency*Mathf.PI*2)+.2f*Mathf.Sin(t*frequency*Mathf.PI*4))*.19f*envelope;
         }
-        song=AudioClip.Create("Reedbank evening",samples.Length,1,rate,false);song.SetData(samples,0);music.clip=song;
+        song=AudioClip.Create("Reedbank evening",samples.Length,1,rate,false);song.SetData(samples,0);
+        // Imported tracks win over the generated placeholder; the clip only stays in memory as a fallback.
+        fallbackSong=song;
+        var dayTrack=Resources.Load<AudioClip>("Audio/BGM/day_clear");
+        daySong=dayTrack!=null?dayTrack:fallbackSong;
+        var loginTrack=Resources.Load<AudioClip>("Audio/BGM/login");
+        loginSong=loginTrack!=null?loginTrack:daySong;
+        song=daySong;music.clip=song;
         var taps=new float[2205];for(int i=0;i<taps.Length;i++)taps[i]=Mathf.Sin(i*2*Mathf.PI*660/rate)*Mathf.Exp(-i/300f)*.2f;
         tick=AudioClip.Create("Menu tap",taps.Length,1,rate,false);tick.SetData(taps,0);
     }
@@ -160,12 +188,14 @@ public sealed class GlobalSettings : MonoBehaviour
         for(int i=0;i<tabs.Length;i++){tabs[i].GetComponent<Image>().color=i==page?new Color32(157,65,47,255):new Color32(225,213,173,255);tabs[i].GetComponentInChildren<TMP_Text>().color=i==page?cream:ink;}
         foreach(Transform child in content.transform){child.gameObject.SetActive(false);Destroy(child.gameObject);}
         if(index==0){
-            SliderRow("主音量",140,Data.master,v=>Data.master=v);
-            SliderRow("音乐",82,Data.music,v=>Data.music=v);
-            SliderRow("音效",24,Data.effects,v=>Data.effects=v);
-            ToggleRow("静音",-36,Data.mute,v=>Data.mute=v);
-            ToggleRow("环境声（雷声等）",-88,Data.ambient,v=>Data.ambient=v);
-            ToggleRow("登录界面也播放音乐",-140,Data.loginMusic,v=>Data.loginMusic=v);
+            SliderRow("主音量",150,Data.master,v=>Data.master=v);
+            SliderRow("音乐",104,Data.music,v=>Data.music=v);
+            SliderRow("音效",58,Data.effects,v=>Data.effects=v);
+            SliderRow("脚步声",12,Data.footstep,v=>Data.footstep=v);
+            SliderRow("拾取音",-34,Data.pickup,v=>Data.pickup=v);
+            ToggleRow("静音",-80,Data.mute,v=>Data.mute=v);
+            ToggleRow("环境声（雨声、雷声）",-126,Data.ambient,v=>Data.ambient=v);
+            ToggleRow("登录界面也播放音乐",-172,Data.loginMusic,v=>Data.loginMusic=v);
         }else if(index==1){
             ToggleRow("全屏显示",140,Data.fullscreen,v=>Data.fullscreen=v);
             ToggleRow("垂直同步",82,Data.vsync,v=>Data.vsync=v);
@@ -219,7 +249,9 @@ public sealed class GlobalSettings : MonoBehaviour
     {var go=Box(parent,label,pos,size,new Color32(225,213,173,255));var b=go.AddComponent<Button>();b.navigation=new Navigation{mode=Navigation.Mode.None};b.onClick.AddListener(()=>{if(tick!=null)click.PlayOneShot(tick);action();});Text(go.transform,label,Vector2.zero,size,21);return go;}
     void OnApplicationPause(bool paused){if(paused)Save();}
     void OnApplicationQuit(){Save();}
-    void OnDestroy(){SceneManager.sceneLoaded-=SceneLoaded;MenuPause.SetPaused(this,false);if(Instance==this){Instance=null;AudioListener.volume=1;}if(song!=null)Destroy(song);if(tick!=null)Destroy(tick);}
+    void OnDestroy(){SceneManager.sceneLoaded-=SceneLoaded;MenuPause.SetPaused(this,false);if(Instance==this){Instance=null;AudioListener.volume=1;}
+        // Only the generated placeholders belong to this object; imported clips are project assets.
+        if(fallbackSong!=null)Destroy(fallbackSong);if(tick!=null)Destroy(tick);}
 }
 
 

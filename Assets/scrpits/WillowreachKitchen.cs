@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 // A short skill challenge earns a single-use cargo seal. Failures never consume ingredients.
 public sealed class WillowreachKitchen : MonoBehaviour
@@ -22,7 +22,7 @@ public sealed class WillowreachKitchen : MonoBehaviour
             if(elapsed<target||elapsed>target+.8f){world.Notify("火候没掌握好，本次未消耗食材。两秒后可再试。");return false;}
             if(inv.GetItemQuantity(pumpkin)<1||inv.GetItemQuantity(mushroom)<1){world.Notify("食材不足，本次未扣除物品。");return false;}
             if(delivery.cargoSeals>=3){world.Notify("已有3层封蜡，先用于运货再来配餐。未消耗物品。");return false;}
-            Consume(pumpkin);Consume(mushroom);successes++;delivery.cargoSeals++;
+            Consume(pumpkin);Consume(mushroom);successes++;delivery.cargoSeals++;PlayerStats.AddCook();
             world.Notify("配餐成功！消耗南瓜1、蘑菇1，获得护货封蜡1层。自动抵挡一次货物损坏。");return true;
         }
         if(successes>=3){world.Notify("今日三份配餐已完成，感谢帮厨！");return false;}

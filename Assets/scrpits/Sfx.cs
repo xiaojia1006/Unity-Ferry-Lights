@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 // One shared 2D sound source for combat. Volume follows the settings panel's effect slider
 // (master volume and mute already reach every source through AudioListener).
@@ -28,6 +28,17 @@ public static class Sfx
     public static void Bow(float scale=1f)=>Emit(ref blade,scale,1.2f,"Audio/blade_01","Audio/blade_02","Audio/blade_03");
     public static void Impact(float scale=1f)=>Emit(ref impact,scale*.85f,1f,"Audio/metal_01","Audio/metal_02");
     public static void EnemySwing(float scale=1f)=>Emit(ref blade,scale*.9f,.9f,"Audio/blade_01","Audio/blade_02","Audio/blade_03");
+    private static AudioClip bite;
+    public static void Bite(float scale=1f)
+    {
+        if(bite==null)bite=Resources.Load<AudioClip>("Audio/bite");
+        if(bite==null)return;
+        var audio=Source();
+        float effects=GlobalSettings.Instance!=null?GlobalSettings.Instance.Data.effects:1f;
+        audio.pitch=Random.Range(.97f,1.05f);
+        audio.PlayOneShot(bite,Mathf.Clamp01(scale*.5f*effects));
+    }
+
     public static void Die(float scale=1f)=>Emit(ref die,scale,1f,"Audio/creature_die_01");
 
     private static void Emit(ref AudioClip[] bank,float scale,float pitch,params string[] paths)

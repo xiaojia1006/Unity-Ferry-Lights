@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,7 +41,7 @@ public class Arrow : MonoBehaviour
     {
         if ((enemyLayer.value & (1 << collision.gameObject.layer)) > 0)
         {
-            collision.gameObject.GetComponent<Enemy_Health>().ChangeHealth(-damage);
+            collision.gameObject.GetComponent<Enemy_Health>().ChangeHealth(-NightCombat2D.PlayerDamage(damage));
             collision.gameObject.GetComponent<Enemy_Knockback>().Knockback(transform, knockbackForce, stunTime, knockbackTime);
             Sfx.Impact(.8f);
 
