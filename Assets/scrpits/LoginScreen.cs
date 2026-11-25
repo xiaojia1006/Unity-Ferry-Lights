@@ -29,6 +29,7 @@ public sealed class LoginScreen : MonoBehaviour
     [Serializable] private class Credentials { public string account; public string password; }
     [Serializable] private class Response { public bool success; public string message; public string account; public string token; }
     private bool visible;
+    private bool offlineOffered;
 
     private void Start()
     {
@@ -76,6 +77,7 @@ public sealed class LoginScreen : MonoBehaviour
     public void Submit()
     {
         if (busy) return;
+        if(offlineOffered&&!registering){LoginSession.Set("离线游客",null);password.text="";SceneManager.LoadScene(SaveSystem.ResumeScene(firstGameScene));return;}
         if (string.IsNullOrWhiteSpace(account.text))
         {
             message.text = "请先填写你的账号";
@@ -110,7 +112,8 @@ public sealed class LoginScreen : MonoBehaviour
                 yield return request.SendWebRequest();
                 if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.DataProcessingError)
                 {
-                    message.text = "无法连接账号服务，请启动本机服务后重试";
+                    offlineOffered=!create;
+                    message.text = create?"无法连接服务，注册需要启动本机服务":"服务不可用，再点一次进入世界，以离线游客试玩";
                     yield break;
                 }
                 Response reply = null;
@@ -150,7 +153,7 @@ public sealed class LoginScreen : MonoBehaviour
             activeRequest = null;
             password.text = "";
             message.text = "登录成功，正在进入世界…";
-            var load = SceneManager.LoadSceneAsync(firstGameScene, LoadSceneMode.Single);
+            var load = SceneManager.LoadSceneAsync(SaveSystem.ResumeScene(firstGameScene), LoadSceneMode.Single);
             if (load != null) yield return load;
         }
         finally
@@ -189,6 +192,7 @@ public sealed class LoginScreen : MonoBehaviour
     public void Registration()
     {
         if (busy) return;
+        offlineOffered=false;
         registering = !registering;
         password.text = "";
         HidePassword();
@@ -196,7 +200,7 @@ public sealed class LoginScreen : MonoBehaviour
         message.text = registering ? "密码需为8至128位，不能全为空格" : "";
     }
     public void Recovery() { if (!busy) message.text = "本机账号暂不支持找回密码，请妥善保存"; }
-    private void ClearMessage(string unused) { if (!busy) message.text = ""; }
+    private void ClearMessage(string unused) { if (!busy) {offlineOffered=false;message.text = "";} }
     private void OnDisable()
     {
         StopAllCoroutines();

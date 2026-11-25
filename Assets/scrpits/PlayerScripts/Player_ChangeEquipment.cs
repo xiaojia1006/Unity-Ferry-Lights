@@ -11,11 +11,12 @@ public class Player_ChangeEquipment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GlobalSettings.BlocksInput) return;
+        if (GlobalSettings.BlocksInput||BackpackUI.BlocksOtherInput||Time.timeScale<=0||FishingRig2D.Busy) return;
         if (Input.GetButtonDown("ChangeEquipment"))
         {
-            combat.enabled = !combat.enabled;
-            bow.enabled = !bow.enabled;
+            if(combat==null||bow==null)return;
+            bool useBow=!bow.enabled;
+            combat.enabled=!useBow;bow.enabled=useBow;
         }
     }
 }

@@ -8262,6 +8262,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &78704358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78704340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 53e949acdb3b45f9b9ad336287f425f9
 --- !u!1 &80450931
 GameObject:
   m_ObjectHideFlags: 0
@@ -10188,7 +10201,7 @@ Tilemap:
       - {fileID: 1343198209, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1613842244, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -1471964140, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 1, y: -15, z: 0}
@@ -10748,7 +10761,7 @@ Tilemap:
       - {fileID: -427563289, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: -165382313, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
       - {fileID: 1472154532, guid: 4ea43d523d935464691cb3a0bbb84b5e, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 3, y: -13, z: 0}
@@ -39739,6 +39752,7 @@ GameObject:
   - component: {fileID: 397865258}
   - component: {fileID: 397865257}
   - component: {fileID: 397865256}
+  - component: {fileID: 397865266}
   m_Layer: 6
   m_Name: Southern cache guard
   m_TagString: Untagged
@@ -39984,6 +39998,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &397865266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397865254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 469892daebed4d148ac198fa48b8956e
 --- !u!1 &400047788
 GameObject:
   m_ObjectHideFlags: 0
@@ -40003,6 +40030,7 @@ GameObject:
   - component: {fileID: 400047792}
   - component: {fileID: 400047791}
   - component: {fileID: 400047790}
+  - component: {fileID: 400047800}
   m_Layer: 6
   m_Name: Western lookout
   m_TagString: Untagged
@@ -40248,6 +40276,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &400047800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400047788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: a9fd27fabd004bf086bdf7ea0a67784a
 --- !u!1 &401738703
 GameObject:
   m_ObjectHideFlags: 0
@@ -40267,6 +40308,7 @@ GameObject:
   - component: {fileID: 401738707}
   - component: {fileID: 401738706}
   - component: {fileID: 401738705}
+  - component: {fileID: 401738715}
   m_Layer: 6
   m_Name: East orchard scout
   m_TagString: Untagged
@@ -40512,6 +40554,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &401738715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401738703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8744fd6d2cdb4ed1a272321665225efb
 --- !u!224 &401793348 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6353292767530872403, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -42318,6 +42373,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestId: Western hidden supply
+--- !u!114 &449695061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449695058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4d4b3e1d45e94b7a8ee0581adde43893
 --- !u!1 &450097784
 GameObject:
   m_ObjectHideFlags: 0
@@ -43234,6 +43302,216 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2eadaaeed141740a2f04a2736bb15b, type: 3}
+--- !u!213 &500543462
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Generated winding creek
+  m_Rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 512
+    height: 512
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 512
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 0
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    00000000000000000000000000000000: 0
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
 --- !u!1 &501064940
 GameObject:
   m_ObjectHideFlags: 0
@@ -45680,7 +45958,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -7, z: 0}
@@ -45700,7 +45978,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -13, y: -7, z: 0}
@@ -45870,7 +46148,7 @@ Tilemap:
       - {fileID: 2119118576, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1747428048, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -917769562, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -15, y: -4, z: 0}
@@ -45880,7 +46158,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -4, z: 0}
@@ -46090,7 +46368,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 9, y: 0, z: 0}
@@ -46230,7 +46508,7 @@ Tilemap:
       - {fileID: -1273670736, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 948593290, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 657074568, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 7, y: 2, z: 0}
@@ -46460,7 +46738,7 @@ Tilemap:
       - {fileID: -1273670736, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 948593290, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 657074568, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: 8, z: 0}
@@ -47101,6 +47379,7 @@ GameObject:
   - component: {fileID: 535157061}
   - component: {fileID: 535157062}
   - component: {fileID: 535157063}
+  - component: {fileID: 535157064}
   m_Layer: 0
   m_Name: Treasure Chest
   m_TagString: Untagged
@@ -47257,6 +47536,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &535157064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535157057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2a5761f4e3e6455a8900ca1c45f73c30
 --- !u!1 &540396265
 GameObject:
   m_ObjectHideFlags: 0
@@ -48187,6 +48479,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &555338192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555338178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9e28a54e38f84e449f8e68d785c40853
 --- !u!1 &558110219
 GameObject:
   m_ObjectHideFlags: 0
@@ -49206,6 +49511,7 @@ GameObject:
   - component: {fileID: 589032319}
   - component: {fileID: 589032318}
   - component: {fileID: 589032317}
+  - component: {fileID: 589032327}
   m_Layer: 6
   m_Name: Western machine guard
   m_TagString: Untagged
@@ -49451,6 +49757,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &589032327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589032315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2feb8c180bc3449999725d46405fad71
 --- !u!1001 &600465689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53206,6 +53525,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &734925660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734925646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1bc4d4124e244f5ca87317c63416a841
 --- !u!128 &736832342
 Font:
   m_ObjectHideFlags: 0
@@ -55339,7 +55671,7 @@ Tilemap:
       - {fileID: -1665277572, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 254123623, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1412742966, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -11, z: 0}
@@ -55353,7 +55685,7 @@ Tilemap:
       - {fileID: -1665277572, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 254123623, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1412742966, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -1, y: -11, z: 0}
@@ -55661,7 +55993,7 @@ Tilemap:
       - {fileID: -236444871, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1846508132, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1621238540, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: -8, z: 0}
@@ -55955,7 +56287,7 @@ Tilemap:
       - {fileID: -236444871, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1846508132, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -1621238540, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -19, y: 4, z: 0}
@@ -56431,7 +56763,7 @@ Tilemap:
       - {fileID: -1952890319, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 164792147, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -2136538854, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 7, y: 10, z: 0}
@@ -56571,7 +56903,7 @@ Tilemap:
       - {fileID: -1952890319, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: 164792147, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
       - {fileID: -2136538854, guid: b946c63e6dff512478c0f7afec1bfa2d, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -61629,6 +61961,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &813160175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813160161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5914bc215b1b4b049f5e1773911b4b13
 --- !u!1001 &813828617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65624,6 +65969,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &936082905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936082901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 144216b07bba446ba0652fd0a006659c
 --- !u!1 &937000572
 GameObject:
   m_ObjectHideFlags: 0
@@ -66423,6 +66781,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestId: Eastern woodland cache
+--- !u!114 &965249417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965249414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: a5385ca3c5064620b4e12ab99a46b190
 --- !u!114 &970852235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5183814732320689268, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -66453,6 +66824,7 @@ GameObject:
   - component: {fileID: 976062472}
   - component: {fileID: 976062471}
   - component: {fileID: 976062470}
+  - component: {fileID: 976062480}
   m_Layer: 6
   m_Name: Fort defender (1)
   m_TagString: Untagged
@@ -66698,6 +67070,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &976062480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976062468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: ed36797c8e884bc2af4261e2d6bdda15
 --- !u!1 &977904873
 GameObject:
   m_ObjectHideFlags: 0
@@ -67404,6 +67789,7 @@ GameObject:
   - component: {fileID: 1008978451}
   - component: {fileID: 1008978450}
   - component: {fileID: 1008978449}
+  - component: {fileID: 1008978452}
   m_Layer: 0
   m_Name: RPG1 - Windwood logging frontier
   m_TagString: Untagged
@@ -67873,6 +68259,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1008978452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008978448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 80213b997adb448d994c238451bc0f5a
 --- !u!1 &1009595888
 GameObject:
   m_ObjectHideFlags: 0
@@ -68039,6 +68438,7 @@ GameObject:
   - component: {fileID: 1012074986}
   - component: {fileID: 1012074985}
   - component: {fileID: 1012074984}
+  - component: {fileID: 1012074995}
   m_Layer: 6
   m_Name: Fort captain
   m_TagString: Untagged
@@ -68284,6 +68684,19 @@ Transform:
   m_Father: {fileID: 1008978451}
   m_RootOrder: 110
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1012074995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012074983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6cefd4ae0f2a4818b1b3ab24cd2f4d50
 --- !u!28 &1019808537
 Texture2D:
   m_ObjectHideFlags: 0
@@ -72773,6 +73186,7 @@ GameObject:
   - component: {fileID: 1096375992}
   - component: {fileID: 1096375991}
   - component: {fileID: 1096375996}
+  - component: {fileID: 1096375997}
   m_Layer: 0
   m_Name: Treasure Chest (1)
   m_TagString: Untagged
@@ -72929,6 +73343,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 1
+--- !u!114 &1096375997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096375990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: f013b64bb9e54e25b20a9d41ffb3788a
 --- !u!1 &1100656825
 GameObject:
   m_ObjectHideFlags: 0
@@ -76235,6 +76662,7 @@ GameObject:
   - component: {fileID: 1190388209}
   - component: {fileID: 1190388208}
   - component: {fileID: 1190388207}
+  - component: {fileID: 1190388218}
   m_Layer: 6
   m_Name: Fort defender
   m_TagString: Untagged
@@ -76480,6 +76908,19 @@ Transform:
   m_Father: {fileID: 1008978451}
   m_RootOrder: 111
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190388218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190388206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4ace0c24c9bb4729a0aeaa614dc24edf
 --- !u!1 &1191944106
 GameObject:
   m_ObjectHideFlags: 0
@@ -83912,7 +84353,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -8, z: 0}
@@ -84102,7 +84543,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -16, y: -4, z: 0}
@@ -84272,7 +84713,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -1, z: 0}
@@ -84372,7 +84813,7 @@ Tilemap:
       - {fileID: 2119118576, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1747428048, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -917769562, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: 1, z: 0}
@@ -84502,7 +84943,7 @@ Tilemap:
       - {fileID: -1273670736, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 948593290, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 657074568, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -5, y: 3, z: 0}
@@ -84682,7 +85123,7 @@ Tilemap:
       - {fileID: 1303337613, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 93424688, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 344729024, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: 6, z: 0}
@@ -84882,7 +85323,7 @@ Tilemap:
       - {fileID: -1984315956, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1387435169, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: 1424953342, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 14, y: 9, z: 0}
@@ -84932,7 +85373,7 @@ Tilemap:
       - {fileID: -178742696, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -997076363, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
       - {fileID: -1115207720, guid: fbe7580f4447edc4993cf64fd1195a69, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
@@ -86686,7 +87127,7 @@ MonoBehaviour:
   rainWeight: 3
   snowWeight: 5
   rainIntensity: 1.25
-  secondsRemaining: 110.85347
+  secondsRemaining: 169.20605
 --- !u!1001 &1463562959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87185,7 +87626,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 1489242452}
+  m_Sprite: {fileID: 500543462}
   m_Color: {r: 0.3529412, g: 0.69803923, b: 0.6784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87648,216 +88089,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!213 &1489242452
-Sprite:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Generated winding creek
-  m_Rect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 512
-    height: 512
-  m_Offset: {x: 0, y: 0}
-  m_Border: {x: 0, y: 0, z: 0, w: 0}
-  m_PixelsToUnits: 512
-  m_Pivot: {x: 0.5, y: 0.5}
-  m_Extrude: 0
-  m_IsPolygon: 0
-  m_AtlasName: 
-  m_PackingTag: 
-  m_RenderDataKey:
-    00000000000000000000000000000000: 0
-  m_AtlasTags: []
-  m_SpriteAtlas: {fileID: 0}
-  m_RD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_AtlasRD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_PhysicsShape: []
-  m_Bones: []
-  m_SpriteID: 
 --- !u!1 &1493636532
 GameObject:
   m_ObjectHideFlags: 0
@@ -93938,6 +94169,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &1634772059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634772055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9d0d38cb9140434d87b5298e18d09f8b
 --- !u!1 &1638347327
 GameObject:
   m_ObjectHideFlags: 0
@@ -135906,6 +136150,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestId: Southern risk reward
+--- !u!114 &1822490977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822490974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 912003b80e18480580ef4cc54194bc77
 --- !u!1001 &1824152222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138211,6 +138468,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chestId: Fort completion chest
+--- !u!114 &1902830683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902830679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b5c0af5d7e6e4bafbfaaba12061212fa
 --- !u!1001 &1907938393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139014,6 +139284,7 @@ GameObject:
   - component: {fileID: 1922107639}
   - component: {fileID: 1922107638}
   - component: {fileID: 1922107637}
+  - component: {fileID: 1922107647}
   m_Layer: 6
   m_Name: Fort captain (1)
   m_TagString: Untagged
@@ -139259,6 +139530,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1922107647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922107635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b28f23d9eec7412c98d4695c11fc9212
 --- !u!1 &1925418010
 GameObject:
   m_ObjectHideFlags: 0
@@ -143740,6 +144024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingDirection: 1
+  lastMoveDir: {x: 1, y: 0}
   rb: {fileID: 2065364696}
   anim: {fileID: 2065364700}
   knockbackForce: 5
@@ -144548,6 +144833,7 @@ GameObject:
   - component: {fileID: 2079965185}
   - component: {fileID: 2079965184}
   - component: {fileID: 2079965183}
+  - component: {fileID: 2079965193}
   m_Layer: 6
   m_Name: Northern road guard
   m_TagString: Untagged
@@ -144793,6 +145079,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2079965193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079965181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 84bef1a86b20409e95aecb353fa8c7ea
 --- !u!21 &2085896468
 Material:
   serializedVersion: 8
@@ -144926,6 +145225,7 @@ GameObject:
   - component: {fileID: 2090571616}
   - component: {fileID: 2090571615}
   - component: {fileID: 2090571614}
+  - component: {fileID: 2090571624}
   m_Layer: 6
   m_Name: Timber road patrol
   m_TagString: Untagged
@@ -145171,6 +145471,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2090571624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090571612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b8b3646fa659424cbca3c1a125e1c356
 --- !u!1 &2095823613
 GameObject:
   m_ObjectHideFlags: 0
@@ -146548,6 +146861,7 @@ GameObject:
   - component: {fileID: 2147460410}
   - component: {fileID: 2147460409}
   - component: {fileID: 2147460414}
+  - component: {fileID: 2147460415}
   m_Layer: 0
   m_Name: Treasure Chest (2)
   m_TagString: Untagged
@@ -146704,6 +147018,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &2147460415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147460408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: d3ee4bb5e35449bdb467bb0e7f520c05
 --- !u!1001 &2051048132374520712
 PrefabInstance:
   m_ObjectHideFlags: 0

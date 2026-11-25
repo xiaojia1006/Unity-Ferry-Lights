@@ -80,7 +80,7 @@ public sealed class RPG1Activities : MonoBehaviour
         return best;
     }
     public void Interact(int index){if(frontier!=null&&index>=0&&index<posts.Length)frontier.Interact(index);}
-    public void Notify(string message){if(toast==null)return;toast.text=message;noticeUntil=Time.unscaledTime+5;}
+    public void Notify(string message){SaveSystem.Checkpoint();if(toast==null)return;toast.text=message;noticeUntil=Time.unscaledTime+5;}
     private void CloseMap(){atlas.SetActive(false);mapClosedFrame=Time.frameCount;MenuPause.SetPaused(this,false);}
     private Vector2 MapPoint(Vector2 p,Vector2 size)=>new Vector2((Mathf.InverseLerp(worldRect.xMin,worldRect.xMax,p.x)-.5f)*size.x,(Mathf.InverseLerp(worldRect.yMin,worldRect.yMax,p.y)-.5f)*size.y);
     // The baked atlas is a real picture of the field, so it must keep the world's aspect instead of being stretched flat.

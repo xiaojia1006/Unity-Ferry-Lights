@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +14,8 @@ public class ExpManager : MonoBehaviour
     public float expGrowMultiplier = 1.2f;
     public Slider expSlider;
     public TMP_Text currentLeveText;
+    Material levelMaterial;
+    void OnDestroy(){if(levelMaterial!=null)Destroy(levelMaterial);}
 
     public static event Action<int> OnLevelUP;
     private void OnEnable()
@@ -64,8 +66,21 @@ public class ExpManager : MonoBehaviour
             foreach (var graphic in expSlider.GetComponentsInChildren<Graphic>(true))
                 graphic.raycastTarget = false;
         }
+        if(currentLeveText==null&&expSlider!=null)currentLeveText=expSlider.GetComponentInChildren<TMP_Text>(true);
         if (currentLeveText == null) return;
+        currentLeveText.gameObject.SetActive(true);
+        currentLeveText.enabled=true;
+        currentLeveText.alpha=1;
+        currentLeveText.maxVisibleCharacters=int.MaxValue;
+        currentLeveText.maxVisibleWords=int.MaxValue;
+        currentLeveText.maxVisibleLines=int.MaxValue;
+        currentLeveText.overflowMode=TextOverflowModes.Overflow;
+        currentLeveText.canvasRenderer.SetAlpha(1);
         currentLeveText.text = "Lv." + Mathf.Max(1, level) + "   EXP " + currentExp + "/" + Mathf.Max(1, expToLevel);
+        // The shared Bangers material is black for parchment UI. Give only this dark-bar label a white face.
+        if(levelMaterial==null&&currentLeveText.fontSharedMaterial!=null)
+        {levelMaterial=new Material(currentLeveText.fontSharedMaterial);levelMaterial.name="Experience label white face";currentLeveText.fontSharedMaterial=levelMaterial;}
+        if(levelMaterial!=null&&levelMaterial.HasProperty("_FaceColor"))levelMaterial.SetColor("_FaceColor",Color.white);
         currentLeveText.color = Color.white;
         currentLeveText.fontStyle = FontStyles.Bold;
         currentLeveText.alignment = TextAlignmentOptions.Center;
@@ -85,8 +100,8 @@ public class ExpManager : MonoBehaviour
         rect.anchorMin = Vector2.zero;
         rect.anchorMax = Vector2.one;
         rect.pivot = new Vector2(0.5f,0.5f);
-        rect.offsetMin = new Vector2(8,1);
-        rect.offsetMax = new Vector2(-8,-1);
+        rect.offsetMin = new Vector2(8,0);
+        rect.offsetMax = new Vector2(-8,0);
         rect.localScale = Vector3.one;
         rect.localRotation = Quaternion.identity;
         rect.SetAsLastSibling();

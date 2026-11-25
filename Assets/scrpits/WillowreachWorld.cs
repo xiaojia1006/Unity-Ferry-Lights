@@ -93,7 +93,7 @@ public sealed partial class WillowreachWorld : MonoBehaviour
         movement.SetWaterState(river, !onBridge && river.GetComponent<PolygonCollider2D>().OverlapPoint(p), river.swimSpeedMultiplier);
     }
     private void OnDisable() { MenuPause.SetPaused(this,false); if(movement!=null && river!=null) movement.SetWaterState(river,false,1); }
-    public void Notify(string text) { if(toast!=null) toast.text=text; messageUntil=Time.unscaledTime+5; }
+    public void Notify(string text) {SaveSystem.Checkpoint(); if(toast!=null) toast.text=text; messageUntil=Time.unscaledTime+5; }
     public void OpenFieldMap() { if(map!=null) { map.SetActive(true); MenuPause.SetPaused(this,true); } }
     private string Region(Vector2 p) => p.y > 10 ? (p.x < 0 ? "风雪遗迹" : "旧矿场") : (p.x < -13 && p.y < 0 ? "柳湾村" : p.x > 10 && p.y < -7 ? "蘑菇林" : "柳湾河道");
 

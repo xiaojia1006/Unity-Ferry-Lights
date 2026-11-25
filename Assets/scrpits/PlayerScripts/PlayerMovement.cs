@@ -23,10 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         var moveInput = GlobalSettings.Movement();
         if (moveInput.sqrMagnitude > 0.01f) lastMoveDir = moveInput.normalized;
-        if (Time.timeScale > 0f && player_Combat != null && player_Combat.isActiveAndEnabled && Input.GetButtonDown("Slash")) 
-        {
-            player_Combat.Attack();
-        }
+
     }
 
     private void FixedUpdate()
@@ -56,8 +53,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("vertical", Mathf.Abs(vertical));
 
         if (
-            horizontal > 0f && transform.localScale.x < 0f ||
-            horizontal < 0f && transform.localScale.x > 0f
+            (GetComponent<Player_Bow>()==null||!GetComponent<Player_Bow>().enabled) &&
+            (horizontal > 0f && transform.localScale.x < 0f ||
+            horizontal < 0f && transform.localScale.x > 0f)
         )
         {
             Flip();

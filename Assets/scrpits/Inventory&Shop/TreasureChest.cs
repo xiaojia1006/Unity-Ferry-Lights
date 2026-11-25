@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -32,7 +32,7 @@ public class TreasureChest : MonoBehaviour
 
     private void Update()
     {
-        if (!BackpackUI.BlocksOtherInput && Input.GetButtonDown("Interact")) TryOpen();
+        if (!BackpackUI.BlocksOtherInput && Input.GetKeyDown(KeyCode.F)) TryOpen();   // 开箱键：F
     }
 
     public bool TryOpen()

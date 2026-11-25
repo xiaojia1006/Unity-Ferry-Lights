@@ -181,7 +181,7 @@ public class BackpackUI : MonoBehaviour
 
     public static bool IsUsable(ItemSO item)
     {
-        return item != null && (item.currentHealth > 0 || item.maxHealth > 0 || item.damage > 0 || item.speed > 0);
+        return item != null && (ArrowCrafting.IsMaterial(item) || item.currentHealth > 0 || item.maxHealth > 0 || item.damage > 0 || item.speed > 0);
     }
 
     private void SetFilter(int value) { filter=value; selected=-1; Refresh(); }
@@ -202,6 +202,8 @@ public class BackpackUI : MonoBehaviour
     private void UseSelected()
     {
         var slot=Selected(); if (slot == null || !IsUsable(slot.itemSO)) return;
+        if(ArrowCrafting.IsMaterial(slot.itemSO))
+        {bool crafted=ArrowCrafting.Craft();Refresh();status.text=crafted?"CRAFTED 5 ARROWS":"NEED 1 BONE AND FREE BAG SPACE";return;}
         int before=slot.quantity; inventory.UseItem(slot); Refresh();
         status.text=slot.quantity < before ? "ITEM USED" : "NO EFFECT - CHECK YOUR HEALTH";
     }
@@ -268,9 +270,11 @@ public class BackpackUI : MonoBehaviour
             description.enableAutoSizing=true; description.fontSizeMin=16; description.fontSizeMax=24;
         }
         else description.text="SELECT AN ITEM\n\nDOUBLE CLICK TO USE\nRIGHT CLICK TO DROP 1";
+        useButton.GetComponentInChildren<TMP_Text>().text=ArrowCrafting.IsMaterial(item)?"CRAFT 5 ARROWS":"USE";
+        if(ArrowCrafting.IsMaterial(item))description.text+="\n\n1 BONE -> 5 ARROWS";
         useButton.interactable=IsUsable(item); dropButton.interactable=item != null;
         var s=StatsManager.Instance; var exp=FindObjectOfType<ExpManager>();
-        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\nHP "+s.currentHealth+" / "+s.maxHealth+"\nDAMAGE "+NightCombat2D.PlayerDamage(s.damage)+"   SPEED "+s.speed+"\nGOLD "+inventory.gold;
+        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\nHP "+s.currentHealth+" / "+s.maxHealth+"\nDAMAGE "+NightCombat2D.PlayerDamage(s.damage)+"   SPEED "+s.speed+"\nGOLD "+inventory.gold+"\nARROWS "+ArrowCrafting.Count;
     }
 
     private void UpdatePortrait()

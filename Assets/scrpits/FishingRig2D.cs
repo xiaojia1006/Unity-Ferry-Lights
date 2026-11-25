@@ -51,6 +51,9 @@ public sealed class FishingRig2D : MonoBehaviour
         active = null;
     }
 
+    void OnDisable(){RestorePose();if(active==this)active=null;}
+    void OnDestroy(){RestorePose();if(active==this)active=null;}
+
     static Sprite PoseSprite(bool lift, bool up)
     {
         // 朝上 / 朝左右 是两套帧：角色只有水平朝向的贴图，不能让竿斜着指向错误方向

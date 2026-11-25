@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class player_combat : MonoBehaviour
 {
@@ -10,16 +11,19 @@ public class player_combat : MonoBehaviour
     public float cooldown = 1f;
 
     private float timer;
+    bool Blocked => Time.timeScale<=0||GlobalSettings.BlocksInput||BackpackUI.BlocksOtherInput||FishingRig2D.Busy||ShopKeeper.currentShopKeeper!=null||DialogueManager.Instance!=null&&DialogueManager.Instance.isDialogueActive;
+    bool BowActive => GetComponent<Player_Bow>()!=null&&GetComponent<Player_Bow>().isActiveAndEnabled;
 
     private void Update()
     {
         if (timer > 0f)
             timer -= Time.deltaTime;
+        if(Input.GetMouseButtonDown(0)&&(EventSystem.current==null||!EventSystem.current.IsPointerOverGameObject()))Attack();
     }
 
     public void Attack()
     {
-        if (!isActiveAndEnabled || Time.timeScale <= 0f || anim == null || timer > 0f)
+        if (!isActiveAndEnabled || Blocked || BowActive || anim == null || timer > 0f)
             return;
 
         anim.SetBool("isAttacking", true);
@@ -29,7 +33,7 @@ public class player_combat : MonoBehaviour
 
     public void DealDamage()
     {
-        if (!isActiveAndEnabled || attackPoint == null || StatsManager.Instance == null)
+        if (!isActiveAndEnabled || Blocked || BowActive || attackPoint == null || StatsManager.Instance == null)
             return;
 
       
@@ -52,7 +56,7 @@ public class player_combat : MonoBehaviour
             Enemy_Health health =
                 hit.GetComponentInParent<Enemy_Health>();
 
-            if (health == null)
+            if (health == null || !health.gameObject.activeInHierarchy || health.currenetHealth<=0)
                 continue;
 
             health.ChangeHealth(-NightCombat2D.PlayerDamage(StatsManager.Instance.damage));
@@ -61,7 +65,7 @@ public class player_combat : MonoBehaviour
             Enemy_Knockback knockback =
                 hit.GetComponentInParent<Enemy_Knockback>();
 
-            if (knockback != null)
+            if (knockback != null && health.currenetHealth>0 && health.gameObject.activeInHierarchy)
             {
                 knockback.Knockback(
                     transform,
@@ -88,7 +92,7 @@ public class player_combat : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (!isActiveAndEnabled || attackPoint == null || StatsManager.Instance == null)
+        if (!isActiveAndEnabled || Blocked || BowActive || attackPoint == null || StatsManager.Instance == null)
             return;
 
         Gizmos.color = Color.red;

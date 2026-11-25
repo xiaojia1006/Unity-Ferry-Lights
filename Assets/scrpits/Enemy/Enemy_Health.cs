@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +21,7 @@ public class Enemy_Health : MonoBehaviour
     public void ChangeHealth(int amount)
     {
         if (defeated || invulnerable && amount < 0) return;
+        SaveSystem.Checkpoint();
         currenetHealth += amount;
         if (currenetHealth > maxHealth)
         {

@@ -1,31 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Knockback : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Enemy_Movement enemy_Movement;
-    private void Start()
+    Rigidbody2D rb;
+    Enemy_Movement movement;
+    Enemy_Health health;
+    bool stunned;
+    void Awake(){Resolve();}
+    void Resolve(){if(rb==null)rb=GetComponent<Rigidbody2D>();if(movement==null)movement=GetComponent<Enemy_Movement>();if(health==null)health=GetComponent<Enemy_Health>();}
+    public void Knockback(Transform source,float force,float stunTime,float knockbackTime)
     {
-        rb = GetComponent<Rigidbody2D>();
-        enemy_Movement = GetComponent<Enemy_Movement>();
+        // A lethal hit can synchronously disable the enemy inside ChangeHealth.
+        // Do not set its state or start a coroutine after that happens.
+        if(!isActiveAndEnabled||!gameObject.activeInHierarchy||source==null)return;
+        Resolve();if(rb==null||health!=null&&health.currenetHealth<=0)return;
+        StopAllCoroutines();stunned=true;
+        rb.velocity=((Vector2)(transform.position-source.position)).normalized*Mathf.Max(0,force);
+        if(movement!=null)movement.ChangeState(EnemyState.Knocback);
+        StartCoroutine(Recover(Mathf.Max(0,stunTime),Mathf.Max(0,knockbackTime)));
     }
-    // Start is called before the first frame update
-    public void Knockback(Transform forceTransform,float knockbackForce,float stunTime,float knockbackTime) 
+    IEnumerator Recover(float stun,float knockback)
     {
-        Vector2 direction = (transform.position - forceTransform.position).normalized;
-        rb.velocity = direction * knockbackForce;
-        Debug.Log("knockback applied");
-        enemy_Movement.ChangeState(EnemyState.Knocback);
-        StopAllCoroutines();
-        StartCoroutine(StunTime(stunTime,knockbackTime));
+        yield return new WaitForSeconds(knockback);
+        if(rb!=null)rb.velocity=Vector2.zero;
+        yield return new WaitForSeconds(stun);
+        Restore();
     }
-    IEnumerator StunTime(float stuTime,float knockbackTime) 
+    void Restore()
     {
-        yield return new WaitForSeconds(knockbackTime);
-        rb.velocity = Vector2.zero;
-        yield return new WaitForSeconds(stuTime);
-        enemy_Movement.ChangeState(EnemyState.Idle);
+        if(!stunned)return;stunned=false;
+        if(rb!=null)rb.velocity=Vector2.zero;
+        if(movement!=null&&(health==null||health.currenetHealth>0))movement.ChangeState(EnemyState.Idle);
     }
+    void OnDisable(){StopAllCoroutines();Restore();}
 }

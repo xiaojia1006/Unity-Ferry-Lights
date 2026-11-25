@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -120,6 +120,7 @@ public partial class InventortyManager : MonoBehaviour
         if (itemSO == null || quantity <= 0)
             return quantity;
 
+        SaveSystem.Checkpoint();
         itemSO = itemSO.InventoryMaterial;
         PickupSfx.Play(itemSO);
 
@@ -243,6 +244,7 @@ public partial class InventortyManager : MonoBehaviour
             return ;
         }
 
+        if(ArrowCrafting.IsMaterial(slot.itemSO)){ArrowCrafting.Craft();return;}
         if (useItem == null)
             useItem = GetComponent<Useltem>();
         if (useItem == null || !useItem.TryApplyItemEffects(slot.itemSO))

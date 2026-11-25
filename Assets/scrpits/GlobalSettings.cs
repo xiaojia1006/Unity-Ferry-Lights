@@ -205,7 +205,7 @@ public sealed class GlobalSettings : MonoBehaviour
             Text(content.transform,"昼夜只影响 RPG2，F9 可预览四个时段。\n垂直同步跟随显示器；全屏在独立游戏生效。",new Vector2(0,-112),new Vector2(650,66),17);
         }else if(index==2){
             string[] modes={"WASD + 方向键","仅 WASD","仅方向键"};Choice("移动方式",130,modes[Data.movement],()=>{Data.movement=(Data.movement+1)%3;Changed();ShowPage(page);});
-            Text(content.transform,"E 互动     R 委托（RPG2）     Tab 地图\nB 背包     1 属性\nEsc 开关设置（F10 同效）\n\n设置打开时暂停游戏；关闭后恢复。",new Vector2(0,-30),new Vector2(650,220),22);
+            Text(content.transform,"E 互动     R 委托（RPG2）     Tab 地图\n左键：剑攻击 / 弓按住拉弓、松开放箭\nB 背包     1 属性\nEsc 开关设置（F10 同效）\n\n设置打开时暂停游戏；关闭后恢复。",new Vector2(0,-30),new Vector2(650,220),22);
         }else if(index==3){
             ToggleRow("显示实时帧率",125,Data.fpsCounter,v=>Data.fpsCounter=v);
             Text(content.transform,"游戏时间在设置打开时暂停。\n音量及画面设置立即应用并自动保存。\n\n恢复默认只重置设置，不会删除账号。",new Vector2(0,-30),new Vector2(650,210),22);
@@ -217,9 +217,10 @@ public sealed class GlobalSettings : MonoBehaviour
     }
     void Logout()
     {
+        SaveSystem.SaveNow();FishingRig2D.End();
         SetOpen(false);LoginSession.Clear();
         // Dispose persistent gameplay roots so another account gets a fresh session.
-        foreach(var root in gameObject.scene.GetRootGameObjects())if(root!=gameObject)Destroy(root);
+        foreach(var root in gameObject.scene.GetRootGameObjects())if(root!=gameObject&&root.GetComponent<SaveSystem>()==null)Destroy(root);
         Time.timeScale=1;SceneManager.LoadScene("Login");
     }
     void SliderRow(string title,float y,float value,Action<float> write)

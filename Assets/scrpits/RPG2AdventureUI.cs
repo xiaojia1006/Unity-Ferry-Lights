@@ -123,7 +123,7 @@ public sealed partial class RPG2Adventure
         if(p.kind==RPG2Point.Kind.Inn)return "旅舍";
         return "路标";
     }
-    public void Notify(string value){if(toastText==null)return;toastText.text=value;toastUntil=Time.unscaledTime+5.5f;}
+    public void Notify(string value){SaveSystem.Checkpoint();if(toastText==null)return;toastText.text=value;toastUntil=Time.unscaledTime+5.5f;}
     public void OpenMenu(bool map)
     {
         if(ui==null||BackpackUI.BlocksOtherInput||ShopKeeper.currentShopKeeper!=null)return;

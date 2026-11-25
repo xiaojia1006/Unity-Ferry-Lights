@@ -18,6 +18,7 @@ public class Loot : MonoBehaviour
     private bool isDropping;
     private float pickupCooldown;
     private bool isCollected;
+    public bool HasUnclaimedContents => !isCollected && itemSO!=null && quantity>0;
 
     private void Awake()
     {

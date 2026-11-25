@@ -10,6 +10,7 @@ public sealed partial class RPG2Adventure : MonoBehaviour
     public RPG2Guard[] guards;
     public GameObject bridge;
     public Rect bridgeArea=new Rect(-1,-4,2,10);
+    private Rect bridgeWalk;   // 运行时按桥贴图算出的通行范围
     public Sprite parchment,ribbon,button,chart;
     public Sprite questScroll,questPaper,questRibbon,rewardSlot;
     public Sprite[] rewardDisplayIcons;
@@ -56,6 +57,8 @@ public sealed partial class RPG2Adventure : MonoBehaviour
         Player.rb.velocity=Vector2.zero;Player.rb.position=spawn;Player.transform.position=spawn;
         waters.AddRange(FindObjectsOfType<WaterSurface2D>());
         bridge.SetActive(false);
+        RebuildBridgeWalkArea();
+        if(bridge!=null&&bridge.GetComponent<BridgeRails2D>()==null)bridge.AddComponent<BridgeRails2D>();
         BuildUI();
         var boundary=gameObject.scene.GetRootGameObjects().FirstOrDefault(g=>g.name=="Confiner");
         foreach(var camera in FindObjectsOfType<Cinemachine.CinemachineVirtualCamera>())
@@ -72,8 +75,8 @@ public sealed partial class RPG2Adventure : MonoBehaviour
     {
         TrackDay();
         if (GlobalSettings.BlocksInput) return;
-        if(Input.GetKeyDown(KeyCode.F11))PlaceFishingHere();
-        if(Input.GetKeyDown(KeyCode.F12))DiagnoseFishing();
+        if(Debug.isDebugBuild&&Input.GetKeyDown(KeyCode.F11))PlaceFishingHere();
+        if(Debug.isDebugBuild&&Input.GetKeyDown(KeyCode.F12))DiagnoseFishing();
         if(Player==null)return;
         if(!Player.gameObject.activeInHierarchy || StatsManager.Instance!=null&&StatsManager.Instance.currentHealth<=0)
         {
@@ -91,7 +94,7 @@ public sealed partial class RPG2Adventure : MonoBehaviour
         }
         NearestIndex=Busy?-1:Nearest(Player.transform.position);
         RefreshUI(blocked);
-        bool onBridge=BridgeRepaired&&bridgeArea.Contains(Player.transform.position);
+        bool onBridge=BridgeRepaired&&bridgeWalk.Contains(Player.transform.position);
         foreach(var water in waters)
         {
             if(water==null)continue;
@@ -149,9 +152,31 @@ public sealed partial class RPG2Adventure : MonoBehaviour
         }
         return false;
     }
+    // 场景里桥被移动/放大后，序列化的 bridgeArea 就对不上了（人在桥上仍被判成在水里，
+    // 于是被水减速、走不动）。这里直接用桥贴图的包围盒，再留一点余量。
+    private void RebuildBridgeWalkArea()
+    {
+        bridgeWalk = bridgeArea;
+        if (bridge == null) return;
+        // 桥可能由多段贴图拼成，取所有子渲染器的合并包围盒
+        var renderers = bridge.GetComponentsInChildren<SpriteRenderer>(true);
+        if (renderers == null || renderers.Length == 0) return;
+        bool found = false;
+        Bounds merged = new Bounds();
+        foreach (var r in renderers)
+        {
+            if (r == null || r.sprite == null) continue;
+            if (!found) { merged = r.bounds; found = true; }
+            else merged.Encapsulate(r.bounds);
+        }
+        if (!found || merged.size.x < .1f || merged.size.y < .1f) return;
+        bridgeWalk = new Rect(merged.min.x - .15f, merged.min.y - .15f, merged.size.x + .3f, merged.size.y + .3f);
+        Debug.Log("[桥] 通行范围 " + bridgeWalk);
+    }
+
     public bool ValidFishingWater(Vector2 point)
     {
-        if(bridge!=null&&bridge.activeInHierarchy&&bridgeArea.Contains(point))return false;
+        if(bridge!=null&&bridge.activeInHierarchy&&bridgeWalk.Contains(point))return false;
         // A small margin keeps the bobber's idle motion away from the shore.
         return InWater(point)&&InWater(point+Vector2.up*.16f)&&InWater(point+Vector2.down*.16f)
             &&InWater(point+Vector2.left*.16f)&&InWater(point+Vector2.right*.16f);
@@ -375,6 +400,7 @@ public sealed partial class RPG2Adventure : MonoBehaviour
     {
         var inv=InventortyManager.Instance;
         if(quest==0)return SuppliesDelivered?"已交付热汤材料":"蘑菇  "+(inv!=null?inv.GetItemQuantity(mushroom):0)+" / 3\n南瓜  "+(inv!=null?inv.GetItemQuantity(pumpkin):0)+" / 2\n返回营地营火按 E 交付";
+        if(quest==1&&BridgeRepaired)return "木料已交付 · 渡桥已修复";
         if(quest==1)return "收集木料  "+Timber+" / 3\n"+(BridgeRepaired?"渡桥已修复":"在断桥南端按 E 修复");
         if(quest==2)return "点亮信标  "+BeaconCount+" / 3\n"+(BridgeRepaired?"暗号：水边 → 遗迹 → 林地":"先修复渡桥");
         return "击败守卫  "+Defeated+" / 4\n点亮信标  "+BeaconCount+" / 3\n"+(TreasureClaimed?"宝藏已领取":"到西北遗迹按 E 开启");
@@ -466,7 +492,7 @@ public sealed partial class RPG2Adventure : MonoBehaviour
             if(TreasureClaimed){Notify("宝藏已经领取，去帮帮渡口的居民吧。");return;}
             if(BeaconCount<3||Defeated<4){Notify("遗迹仍被封锁：需要三座信标及清除四名巡逻守卫。");return;}
             if(!CanRewardQuest(3))return;
-            TreasureClaimed=true;RewardQuest(3);p.GetComponent<SpriteRenderer>().color=new Color(.65f,.7f,.6f);Notify("找到渡口宝藏！"+QuestReward(3));return;
+            TreasureClaimed=true;RewardQuest(3);p.GetComponent<SpriteRenderer>().color=new Color(.65f,.7f,.6f);Notify("本章完成！找到渡口宝藏！"+QuestReward(3)+" · 可继续探索或前往柳湾");return;
         }
         if(p.kind==RPG2Point.Kind.Fishing)
         {
@@ -628,6 +654,6 @@ public sealed partial class RPG2Adventure : MonoBehaviour
         }
         var frames=moving?sheepWalk:sheepIdle;if(frames!=null&&frames.Length>0)sheep.GetComponent<SpriteRenderer>().sprite=frames[(int)(Time.time*7)%frames.Length];
     }
-    private void OnDisable(){CloseMenu();}
+    private void OnDisable(){FishingRig2D.End();CloseMenu();}
 }
 

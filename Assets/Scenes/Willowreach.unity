@@ -840,216 +840,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
---- !u!213 &13872098
-Sprite:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Generated winding creek
-  m_Rect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 512
-    height: 512
-  m_Offset: {x: 0, y: 0}
-  m_Border: {x: 0, y: 0, z: 0, w: 0}
-  m_PixelsToUnits: 512
-  m_Pivot: {x: 0.5, y: 0.5}
-  m_Extrude: 0
-  m_IsPolygon: 0
-  m_AtlasName: 
-  m_PackingTag: 
-  m_RenderDataKey:
-    00000000000000000000000000000000: 0
-  m_AtlasTags: []
-  m_SpriteAtlas: {fileID: 0}
-  m_RD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_AtlasRD:
-    serializedVersion: 3
-    texture: {fileID: 0}
-    alphaTexture: {fileID: 0}
-    secondaryTextures: []
-    m_SubMeshes:
-    - serializedVersion: 2
-      firstByte: 0
-      indexCount: 6
-      topology: 0
-      baseVertex: 0
-      firstVertex: 0
-      vertexCount: 4
-      localAABB:
-        m_Center: {x: 0, y: 0, z: 0}
-        m_Extent: {x: 0, y: 0, z: 0}
-    m_IndexBuffer: 000001000200020001000300
-    m_VertexData:
-      serializedVersion: 3
-      m_VertexCount: 4
-      m_Channels:
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 3
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 1
-        offset: 0
-        format: 0
-        dimension: 2
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      - stream: 0
-        offset: 0
-        format: 0
-        dimension: 0
-      m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
-    m_Bindpose: []
-    textureRect:
-      serializedVersion: 2
-      x: 0
-      y: 0
-      width: 512
-      height: 512
-    textureRectOffset: {x: 0, y: 0}
-    atlasRectOffset: {x: -1, y: -1}
-    settingsRaw: 0
-    uvTransform: {x: 512, y: 256, z: 512, w: 256}
-    downscaleMultiplier: 1
-  m_PhysicsShape: []
-  m_Bones: []
-  m_SpriteID: 
 --- !u!1 &25302364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,6 +2747,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   home: {x: 18, y: 16}
   leash: 4.6
+--- !u!114 &78704359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78704340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: dfa476665a544c4db78cd9b94d562dcc
 --- !u!1 &79239563
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,6 +2872,7 @@ GameObject:
   - component: {fileID: 80159412}
   - component: {fileID: 80159413}
   - component: {fileID: 80159411}
+  - component: {fileID: 80159415}
   m_Layer: 0
   m_Name: Resonance rune 2
   m_TagString: Untagged
@@ -3184,6 +2988,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 289
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &80159415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80159410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8f41dbd4a5ff47faafa91eedf3f53856
 --- !u!1 &81921239
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,6 +4550,7 @@ GameObject:
   - component: {fileID: 153533737}
   - component: {fileID: 153533738}
   - component: {fileID: 153533736}
+  - component: {fileID: 153533740}
   m_Layer: 0
   m_Name: Mine ore cache
   m_TagString: Untagged
@@ -4847,6 +4665,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &153533740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153533735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b3d2dfdd105d481da454a003aaf29b70
 --- !u!1 &161298819
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,6 +5074,7 @@ GameObject:
   - component: {fileID: 187814599}
   - component: {fileID: 187814600}
   - component: {fileID: 187814598}
+  - component: {fileID: 187814602}
   m_Layer: 0
   m_Name: Mine ore cache
   m_TagString: Untagged
@@ -5357,6 +5189,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187814602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187814597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: f857c5d9ffea4a46982b269f2603d0e2
 --- !u!1 &196368205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7070,6 +6915,7 @@ GameObject:
   - component: {fileID: 266281829}
   - component: {fileID: 266281830}
   - component: {fileID: 266281828}
+  - component: {fileID: 266281832}
   m_Layer: 0
   m_Name: Delivery forest
   m_TagString: Untagged
@@ -7184,6 +7030,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 285
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &266281832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266281827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 7522c30863bd4c61bd3a91e2abbbe7c2
 --- !u!1 &270110036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8532,6 +8391,7 @@ GameObject:
   - component: {fileID: 309424781}
   - component: {fileID: 309424782}
   - component: {fileID: 309424780}
+  - component: {fileID: 309424784}
   m_Layer: 0
   m_Name: Pasture treasure 0
   m_TagString: Untagged
@@ -8646,6 +8506,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 275
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309424784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309424779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b135df8c3a114f46a1be85713c39cc26
 --- !u!1 &310924323
 GameObject:
   m_ObjectHideFlags: 0
@@ -8826,6 +8699,7 @@ GameObject:
   - component: {fileID: 327432644}
   - component: {fileID: 327432645}
   - component: {fileID: 327432643}
+  - component: {fileID: 327432647}
   m_Layer: 0
   m_Name: Mine ore cache
   m_TagString: Untagged
@@ -8940,6 +8814,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &327432647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327432642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: fa69b1e1e15a402098840d1b3bdb176c
 --- !u!1 &328468464
 GameObject:
   m_ObjectHideFlags: 0
@@ -9484,6 +9371,7 @@ GameObject:
   - component: {fileID: 342920780}
   - component: {fileID: 342920781}
   - component: {fileID: 342920779}
+  - component: {fileID: 342920783}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -9598,6 +9486,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &342920783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342920778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: bb2603f1c54649108351e51b6a92cb4b
 --- !u!114 &344669295 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5183814732320689268, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -9621,6 +9522,7 @@ GameObject:
   - component: {fileID: 344900497}
   - component: {fileID: 344900498}
   - component: {fileID: 344900496}
+  - component: {fileID: 344900500}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -9735,6 +9637,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344900500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344900495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 59c9d907509d4cf2916f9bed520a418e
 --- !u!1 &345079349
 GameObject:
   m_ObjectHideFlags: 0
@@ -10867,6 +10782,7 @@ GameObject:
   - component: {fileID: 392136389}
   - component: {fileID: 392136390}
   - component: {fileID: 392136388}
+  - component: {fileID: 392136392}
   m_Layer: 0
   m_Name: Survey - ruins
   m_TagString: Untagged
@@ -10981,6 +10897,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &392136392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392136387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5314e3bb321140c6beef870afe8056b1
 --- !u!1 &392890509
 GameObject:
   m_ObjectHideFlags: 0
@@ -12006,6 +11935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441590912}
   - component: {fileID: 441590911}
+  - component: {fileID: 441590913}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -12053,6 +11983,19 @@ Transform:
   m_Father: {fileID: 949422265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &441590913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441590910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9897b889d12745ebb59f4de6cd1c6c89
 --- !u!1 &445551641
 GameObject:
   m_ObjectHideFlags: 0
@@ -16466,6 +16409,216 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!213 &496407842
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Generated winding creek
+  m_Rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 512
+    height: 512
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 512
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 0
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    00000000000000000000000000000000: 0
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 0}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 6
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 4
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 000001000200020001000300
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 4
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 80
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 512
+      height: 512
+    textureRectOffset: {x: 0, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 0
+    uvTransform: {x: 512, y: 256, z: 512, w: 256}
+    downscaleMultiplier: 1
+  m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
 --- !u!1 &508056463
 GameObject:
   m_ObjectHideFlags: 0
@@ -17342,6 +17495,7 @@ GameObject:
   - component: {fileID: 535157061}
   - component: {fileID: 535157062}
   - component: {fileID: 535157063}
+  - component: {fileID: 535157064}
   m_Layer: 0
   m_Name: Treasure Chest
   m_TagString: Untagged
@@ -17498,6 +17652,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &535157064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535157057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 47ab943eb7674d0c823784ce0dcb6b39
 --- !u!1 &540068841
 GameObject:
   m_ObjectHideFlags: 0
@@ -18463,6 +18630,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   home: {x: 28, y: 17}
   leash: 4.6
+--- !u!114 &555338193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555338178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: aefb97761d11452b8d74a3cfbf745ad4
 --- !u!1 &558728973
 GameObject:
   m_ObjectHideFlags: 0
@@ -20013,6 +20193,7 @@ GameObject:
   - component: {fileID: 592451637}
   - component: {fileID: 592451638}
   - component: {fileID: 592451636}
+  - component: {fileID: 592451640}
   m_Layer: 0
   m_Name: Mine ore cache
   m_TagString: Untagged
@@ -20127,6 +20308,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &592451640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592451635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: b555edf066f741a09023a05b3d051375
 --- !u!1 &593944728
 GameObject:
   m_ObjectHideFlags: 0
@@ -20650,6 +20844,7 @@ GameObject:
   - component: {fileID: 602132312}
   - component: {fileID: 602132313}
   - component: {fileID: 602132311}
+  - component: {fileID: 602132315}
   m_Layer: 0
   m_Name: Delivery mine
   m_TagString: Untagged
@@ -20764,6 +20959,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 284
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602132315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602132310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: d058140cd8e04126ba6ceafb0f24efad
 --- !u!114 &603480121 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8708037941441198514, guid: 7fb8eaf30b1b11241abc42e765355b8a, type: 3}
@@ -22159,6 +22367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 653562724}
   - component: {fileID: 653562723}
+  - component: {fileID: 653562725}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -22206,6 +22415,19 @@ Transform:
   m_Father: {fileID: 926251607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653562725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653562722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 754efc52619e4844aaa2a29c3b813c6f
 --- !u!1 &654430319
 GameObject:
   m_ObjectHideFlags: 0
@@ -22677,6 +22899,7 @@ GameObject:
   - component: {fileID: 672765929}
   - component: {fileID: 672765930}
   - component: {fileID: 672765928}
+  - component: {fileID: 672765932}
   m_Layer: 0
   m_Name: Survey - forest
   m_TagString: Untagged
@@ -22792,6 +23015,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672765932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672765927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: eb4f6a5fef9440c49d512cb01f1acd49
 --- !u!224 &673715016 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6353292767530872403, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -23517,6 +23753,7 @@ GameObject:
   - component: {fileID: 702795759}
   - component: {fileID: 702795760}
   - component: {fileID: 702795758}
+  - component: {fileID: 702795762}
   m_Layer: 0
   m_Name: Survey - mine
   m_TagString: Untagged
@@ -23631,6 +23868,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &702795762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702795757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 291572a6e31b4735bcd29d5a51875650
 --- !u!114 &708561408 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5183814732320689268, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -24593,6 +24843,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   home: {x: -24, y: 16}
   leash: 4.6
+--- !u!114 &734925661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734925646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 114f2d5106ae4aa0b03fd8396fb63f35
 --- !u!1 &740379134
 GameObject:
   m_ObjectHideFlags: 0
@@ -26166,6 +26429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799682421}
   - component: {fileID: 799682420}
+  - component: {fileID: 799682422}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -26213,6 +26477,19 @@ Transform:
   m_Father: {fileID: 151960383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799682422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799682419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: c8942be7ec10423588eb153708985ed6
 --- !u!1 &800067578
 GameObject:
   m_ObjectHideFlags: 0
@@ -27026,6 +27303,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   home: {x: 28, y: -15}
   leash: 4.6
+--- !u!114 &813160176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813160161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 30fcc5c47fe74317aa39a241a54587dc
 --- !u!1 &813696068
 GameObject:
   m_ObjectHideFlags: 0
@@ -27038,6 +27328,7 @@ GameObject:
   - component: {fileID: 813696070}
   - component: {fileID: 813696071}
   - component: {fileID: 813696069}
+  - component: {fileID: 813696073}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -27152,6 +27443,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &813696073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813696068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: f72c7cb5cd08430cbdbd7f953beec80b
 --- !u!1001 &813828617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27751,6 +28055,7 @@ GameObject:
   - component: {fileID: 837681703}
   - component: {fileID: 837681704}
   - component: {fileID: 837681702}
+  - component: {fileID: 837681706}
   m_Layer: 0
   m_Name: Resonance rune 0
   m_TagString: Untagged
@@ -27866,6 +28171,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 287
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837681706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837681701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: c02dbeeca2db4ef187cc9dde12122956
 --- !u!1001 &840615596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27999,6 +28317,7 @@ GameObject:
   - component: {fileID: 842024231}
   - component: {fileID: 842024232}
   - component: {fileID: 842024230}
+  - component: {fileID: 842024234}
   m_Layer: 0
   m_Name: Delivery ruins
   m_TagString: Untagged
@@ -28113,6 +28432,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 286
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842024234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842024229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1f92f306eea74b45ab066f0463d49b1a
 --- !u!1 &845498242
 GameObject:
   m_ObjectHideFlags: 0
@@ -28225,6 +28557,7 @@ GameObject:
   - component: {fileID: 850599802}
   - component: {fileID: 850599803}
   - component: {fileID: 850599801}
+  - component: {fileID: 850599805}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -28339,6 +28672,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &850599805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850599800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4a9aae9266b04f358cae8d5957c159c2
 --- !u!1 &872559184
 GameObject:
   m_ObjectHideFlags: 0
@@ -29942,6 +30288,7 @@ GameObject:
   - component: {fileID: 935495939}
   - component: {fileID: 935495940}
   - component: {fileID: 935495938}
+  - component: {fileID: 935495942}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -30056,6 +30403,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935495942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935495937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: f469ccc840ad497fa6ec099d4a5c35fd
 --- !u!1 &937220274
 GameObject:
   m_ObjectHideFlags: 0
@@ -30801,6 +31161,7 @@ GameObject:
   - component: {fileID: 969520665}
   - component: {fileID: 969520666}
   - component: {fileID: 969520664}
+  - component: {fileID: 969520668}
   m_Layer: 0
   m_Name: Mine ore cache
   m_TagString: Untagged
@@ -30915,6 +31276,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &969520668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969520663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 25a7704c9d7e429cb5cbc6aec68a0312
 --- !u!114 &970852235 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -5183814732320689268, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -31439,6 +31813,7 @@ GameObject:
   - component: {fileID: 1005845282}
   - component: {fileID: 1005845283}
   - component: {fileID: 1005845281}
+  - component: {fileID: 1005845285}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -31553,6 +31928,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005845285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005845280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 33e71ac2314440b5bcbe342b94b5c8ef
 --- !u!224 &1006796672 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5204023771263788175, guid: 9363fd526b67fa347a4f24b399c60ded, type: 3}
@@ -33572,6 +33960,7 @@ GameObject:
   - component: {fileID: 1096286858}
   - component: {fileID: 1096286859}
   - component: {fileID: 1096286857}
+  - component: {fileID: 1096286861}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -33686,6 +34075,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1096286861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096286856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: ce3af2577ecc448d9eebea7b958fc167
 --- !u!1 &1096375990
 GameObject:
   m_ObjectHideFlags: 0
@@ -33700,6 +34102,7 @@ GameObject:
   - component: {fileID: 1096375992}
   - component: {fileID: 1096375991}
   - component: {fileID: 1096375996}
+  - component: {fileID: 1096375997}
   m_Layer: 0
   m_Name: Treasure Chest (1)
   m_TagString: Untagged
@@ -33856,6 +34259,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 1
+--- !u!114 &1096375997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096375990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 356f3c5c3de14e31ad136d4fd87fd8d2
 --- !u!1 &1099131170
 GameObject:
   m_ObjectHideFlags: 0
@@ -34015,6 +34431,7 @@ GameObject:
   - component: {fileID: 1100418951}
   - component: {fileID: 1100418952}
   - component: {fileID: 1100418950}
+  - component: {fileID: 1100418954}
   m_Layer: 0
   m_Name: Shortcut lever
   m_TagString: Untagged
@@ -34129,6 +34546,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100418954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100418949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 278f0404228d4a46a3cda12912d9c9f3
 --- !u!224 &1104732762 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 999196258268298765, guid: 6bde6bf2068e47d4bbea2873e79d56a4, type: 3}
@@ -34641,6 +35071,7 @@ GameObject:
   - component: {fileID: 1136518581}
   - component: {fileID: 1136518582}
   - component: {fileID: 1136518580}
+  - component: {fileID: 1136518584}
   m_Layer: 0
   m_Name: Resonance rune 1
   m_TagString: Untagged
@@ -34756,6 +35187,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 288
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136518584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136518579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 684e756f7e91490eb92a1db6bbba5929
 --- !u!1 &1136999500
 GameObject:
   m_ObjectHideFlags: 0
@@ -34981,6 +35425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151112401}
   - component: {fileID: 1151112400}
+  - component: {fileID: 1151112402}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -35028,6 +35473,19 @@ Transform:
   m_Father: {fileID: 225000589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151112402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151112399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2da68ab034c14fd0be749cc247355845
 --- !u!1 &1151295612
 GameObject:
   m_ObjectHideFlags: 0
@@ -35140,6 +35598,7 @@ GameObject:
   - component: {fileID: 1153899871}
   - component: {fileID: 1153899872}
   - component: {fileID: 1153899870}
+  - component: {fileID: 1153899874}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -35254,6 +35713,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153899874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153899869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: d13eb4457e4142ed8e4a2f6153df7890
 --- !u!1 &1159428784
 GameObject:
   m_ObjectHideFlags: 0
@@ -36429,6 +36901,7 @@ GameObject:
   - component: {fileID: 1186684454}
   - component: {fileID: 1186684455}
   - component: {fileID: 1186684453}
+  - component: {fileID: 1186684457}
   m_Layer: 0
   m_Name: Pasture treasure 1
   m_TagString: Untagged
@@ -36543,6 +37016,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 276
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186684457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186684452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0f8fc1d2ed5d447b9eb1fd8e39d47475
 --- !u!224 &1187946962 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6353292767530872403, guid: ff3c256fdbbf0c143834e44639cfceb4, type: 3}
@@ -36569,6 +37055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190224114}
   - component: {fileID: 1190224113}
+  - component: {fileID: 1190224115}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -36616,6 +37103,19 @@ Transform:
   m_Father: {fileID: 1908588226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190224115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190224112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6a93eecbd6b54c309fd7fc6bc4472d69
 --- !u!1 &1190575574
 GameObject:
   m_ObjectHideFlags: 0
@@ -36628,6 +37128,7 @@ GameObject:
   - component: {fileID: 1190575576}
   - component: {fileID: 1190575577}
   - component: {fileID: 1190575575}
+  - component: {fileID: 1190575579}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -36742,6 +37243,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1190575579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190575574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: dfce0f28f7cd4115a646ef42bef13440
 --- !u!1 &1195884717
 GameObject:
   m_ObjectHideFlags: 0
@@ -39158,6 +39672,7 @@ GameObject:
   - component: {fileID: 1255980758}
   - component: {fileID: 1255980756}
   - component: {fileID: 1255980760}
+  - component: {fileID: 1255980761}
   m_Layer: 0
   m_Name: Camp - safe rest
   m_TagString: Untagged
@@ -39294,6 +39809,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 501842bfb94c9df45a442c3d9358c304, type: 2}
   framesPerSecond: 8
   phase: 0
+--- !u!114 &1255980761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255980755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 113fd6bfa58d42608a49814eebbdea9d
 --- !u!1001 &1258146133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41880,6 +42408,7 @@ GameObject:
   - component: {fileID: 1349584501}
   - component: {fileID: 1349584502}
   - component: {fileID: 1349584500}
+  - component: {fileID: 1349584504}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -41994,6 +42523,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1349584504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349584499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 22e3e060a68c472ea159b52b85224f55
 --- !u!1 &1352545240
 GameObject:
   m_ObjectHideFlags: 0
@@ -44692,7 +45234,7 @@ MonoBehaviour:
   rainWeight: 3
   snowWeight: 5
   rainIntensity: 1.25
-  secondsRemaining: 92.24792
+  secondsRemaining: 79.393326
 --- !u!1 &1457443818
 GameObject:
   m_ObjectHideFlags: 0
@@ -44703,6 +45245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1457443820}
   - component: {fileID: 1457443819}
+  - component: {fileID: 1457443821}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -44750,6 +45293,19 @@ Transform:
   m_Father: {fileID: 1886514422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457443821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457443818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: e405d22c020a4f558a2b8d007768b442
 --- !u!1 &1457809820
 GameObject:
   m_ObjectHideFlags: 0
@@ -44762,6 +45318,7 @@ GameObject:
   - component: {fileID: 1457809822}
   - component: {fileID: 1457809823}
   - component: {fileID: 1457809821}
+  - component: {fileID: 1457809825}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -44876,6 +45433,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1457809825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457809820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 84739468590e499885a8cc87da37ce4f
 --- !u!1001 &1463562959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46042,7 +46612,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 13872098}
+  m_Sprite: {fileID: 496407842}
   m_Color: {r: 0.3529412, g: 0.69803923, b: 0.6784314, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -46637,6 +47207,7 @@ GameObject:
   - component: {fileID: 1506296736}
   - component: {fileID: 1506296737}
   - component: {fileID: 1506296735}
+  - component: {fileID: 1506296739}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -46751,6 +47322,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506296739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506296734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1f1384b13fcf4fcc9ce76d3654306259
 --- !u!1 &1510269385
 GameObject:
   m_ObjectHideFlags: 0
@@ -48974,6 +49558,7 @@ GameObject:
   - component: {fileID: 1605494040}
   - component: {fileID: 1605494041}
   - component: {fileID: 1605494039}
+  - component: {fileID: 1605494043}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -49088,6 +49673,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1605494043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605494038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: ccfceae0b9e243deac72bd4ad5a16c19
 --- !u!1 &1606645710
 GameObject:
   m_ObjectHideFlags: 0
@@ -49515,6 +50113,7 @@ GameObject:
   - component: {fileID: 1618865119}
   - component: {fileID: 1618865120}
   - component: {fileID: 1618865118}
+  - component: {fileID: 1618865122}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -49629,6 +50228,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1618865122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618865117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: c0587210ca93487ea5005c9832dbd689
 --- !u!1 &1621066892
 GameObject:
   m_ObjectHideFlags: 0
@@ -50450,6 +51062,7 @@ GameObject:
   - component: {fileID: 1650265639}
   - component: {fileID: 1650265640}
   - component: {fileID: 1650265638}
+  - component: {fileID: 1650265642}
   m_Layer: 0
   m_Name: Village dispatch board
   m_TagString: Untagged
@@ -50564,6 +51177,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 283
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650265642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650265637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 78b4836b89db4ba6a19dcec8ce7e6a30
 --- !u!1 &1652861655
 GameObject:
   m_ObjectHideFlags: 0
@@ -51250,6 +51876,7 @@ GameObject:
   - component: {fileID: 1677738346}
   - component: {fileID: 1677738347}
   - component: {fileID: 1677738345}
+  - component: {fileID: 1677738349}
   m_Layer: 0
   m_Name: Bone flute workshop
   m_TagString: Untagged
@@ -51364,6 +51991,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 274
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677738349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677738344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 07f98fe1288d449091a7ea1d41bbf6c8
 --- !u!1 &1682303215
 GameObject:
   m_ObjectHideFlags: 0
@@ -51668,6 +52308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1685933623}
   - component: {fileID: 1685933622}
+  - component: {fileID: 1685933624}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -51715,6 +52356,19 @@ Transform:
   m_Father: {fileID: 286392510}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1685933624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685933621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 32a9a1301558457eb5a414b5569b2899
 --- !u!1 &1695895236
 GameObject:
   m_ObjectHideFlags: 0
@@ -105037,6 +105691,7 @@ GameObject:
   - component: {fileID: 1709157103}
   - component: {fileID: 1709157104}
   - component: {fileID: 1709157102}
+  - component: {fileID: 1709157106}
   m_Layer: 0
   m_Name: Forest mushroom
   m_TagString: Untagged
@@ -105151,6 +105806,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1709157106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709157101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: d312e44a54b4494aa3251881d53cd5d4
 --- !u!1 &1713411224
 GameObject:
   m_ObjectHideFlags: 0
@@ -105247,6 +105915,7 @@ GameObject:
   - component: {fileID: 1746589100}
   - component: {fileID: 1746589101}
   - component: {fileID: 1746589099}
+  - component: {fileID: 1746589103}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -105361,6 +106030,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746589103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746589098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 078495a6016c4ed2b3bfe2585a95b3b8
 --- !u!1 &1751700432
 GameObject:
   m_ObjectHideFlags: 0
@@ -108212,6 +108894,7 @@ GameObject:
   - component: {fileID: 1866038653}
   - component: {fileID: 1866038654}
   - component: {fileID: 1866038652}
+  - component: {fileID: 1866038656}
   m_Layer: 0
   m_Name: Pasture treasure 2
   m_TagString: Untagged
@@ -108326,6 +109009,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 277
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1866038656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866038651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: c85df423af3e4c20991de0beb379c771
 --- !u!1 &1866330938
 GameObject:
   m_ObjectHideFlags: 0
@@ -116606,6 +117302,7 @@ GameObject:
   - component: {fileID: 2047607290}
   - component: {fileID: 2047607292}
   - component: {fileID: 2047607293}
+  - component: {fileID: 2047607294}
   m_Layer: 0
   m_Name: Willowreach - authored world
   m_TagString: Untagged
@@ -117101,6 +117798,19 @@ MonoBehaviour:
   started: 0
   target: 0
   retryAt: 0
+--- !u!114 &2047607294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047607287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4490d3cef73841d18e686252968d7e8f
 --- !u!1 &2049145614
 GameObject:
   m_ObjectHideFlags: 0
@@ -117595,6 +118305,7 @@ GameObject:
   - component: {fileID: 2060330988}
   - component: {fileID: 2060330989}
   - component: {fileID: 2060330987}
+  - component: {fileID: 2060330991}
   m_Layer: 0
   m_Name: Pumpkin patch
   m_TagString: Untagged
@@ -117709,6 +118420,19 @@ Transform:
   m_Father: {fileID: 2047607289}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060330991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060330986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 832f58891690419fb6c70cee6d5e354e
 --- !u!1 &2065364694
 GameObject:
   m_ObjectHideFlags: 0
@@ -117748,6 +118472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingDirection: 1
+  lastMoveDir: {x: 1, y: 0}
   rb: {fileID: 2065364696}
   anim: {fileID: 2065364700}
   knockbackForce: 5
@@ -118172,6 +118897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2113050656}
   - component: {fileID: 2113050655}
+  - component: {fileID: 2113050657}
   m_Layer: 0
   m_Name: Door interaction
   m_TagString: Untagged
@@ -118219,6 +118945,19 @@ Transform:
   m_Father: {fileID: 429135478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2113050657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113050654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1d26bddac4d94cd0ba48c86908e80239
 --- !u!1 &2114110290
 GameObject:
   m_ObjectHideFlags: 0
@@ -119393,6 +120132,7 @@ GameObject:
   - component: {fileID: 2147460410}
   - component: {fileID: 2147460409}
   - component: {fileID: 2147460414}
+  - component: {fileID: 2147460415}
   m_Layer: 0
   m_Name: Treasure Chest (2)
   m_TagString: Untagged
@@ -119549,6 +120289,19 @@ MonoBehaviour:
   feet: {fileID: 0}
   footOffset: 0
   elevated: 0
+--- !u!114 &2147460415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147460408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83416caf677806542b3f3aacc4a8c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 40ef8f5e53264f51a1c1d271fe431f96
 --- !u!1001 &2051048132374520712
 PrefabInstance:
   m_ObjectHideFlags: 0
