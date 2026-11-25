@@ -24,7 +24,7 @@ Hierarchy 中 RPG1 - Windwood logging frontier 下：Editable terrain 用 Tile P
 地形以林地为主，没有新增河道。复用树木、房屋、哨塔、废墟、矿洞、桥板、木材、草丛、岩石、作物、羊、敌人、宝箱和 UI；没有把每个颜色变体或动画帧单独堆入地图。
 
 ## 进度边界
-供能、通关、一次性任务、宝箱仅当前游戏进程保留，重启重置，未接磁盘存档。采集计时与普通敌人重新加载场景时重置。羊采用局部避障，复杂自定义障碍需留通道。地图底图为生成快照，编辑地形后需要更新底图。
+供能、通关、一次性任务结算与宝箱状态已接入按账号 `SaveSystem`，重启后恢复；采集计时与普通敌人仍会在重新加载场景时重置。羊采用局部避障，复杂自定义障碍需留通道。地图底图为生成快照，编辑地形后需要更新底图。
 
 ## 验证与回滚
 验证：Logs/RPG1FrontierSceneChecks.txt、RPG1FrontierPlayChecks.txt、RPG1FrontierIntegration.txt、BackpackChecks.txt、ShopPurchaseChecks.txt。
