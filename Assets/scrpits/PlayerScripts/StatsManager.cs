@@ -53,7 +53,7 @@ public class StatsManager : MonoBehaviour
         if (healthTxet != null)
         {
             healthTxet.text =
-                "HP:" + currentHealth + "/" + maxHealth;
+                "ÉúÃü:" + currentHealth + "/" + maxHealth;
         }
 
         PlayerHealth playerHealth =

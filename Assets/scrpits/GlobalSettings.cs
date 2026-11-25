@@ -213,7 +213,7 @@ public sealed class GlobalSettings : MonoBehaviour
             Text(content.transform,"当前账号："+(string.IsNullOrEmpty(LoginSession.Account)?"访客":LoginSession.Account)+"\n\n账号密码由本机账号服务验证。\n设置保存在当前设备，不包含游戏进度。",new Vector2(0,65),new Vector2(650,160),22);
             if(confirmingLogout){Text(content.transform,"返回登录将结束本次游玩，未保存进度会丢失。",new Vector2(0,-55),new Vector2(670,50),19);Button(content.transform,"确认返回登录",new Vector2(-120,-120),new Vector2(220,44),Logout);Button(content.transform,"取消",new Vector2(150,-120),new Vector2(150,44),()=>{confirmingLogout=false;ShowPage(4);});}
             else Button(content.transform,"切换账号",new Vector2(0,-110),new Vector2(220,44),()=>{confirmingLogout=true;ShowPage(4);});
-        }else Text(content.transform,"芦岸冒险\n\n森林、渡口与旅人的故事\n\n全局设置 · 本机保存\n音乐：五声音阶 / 夜间场景音乐",Vector2.zero,new Vector2(650,300),25);
+        }else Text(content.transform,"渡口灯火 · Ferry Lights\n\n森林、渡口与旅人的故事\n\n全局设置 · 本机保存\n音乐：五声音阶 / 夜间场景音乐",Vector2.zero,new Vector2(650,300),25);
     }
     void Logout()
     {

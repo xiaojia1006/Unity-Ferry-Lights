@@ -64,14 +64,15 @@ public sealed class LoginPolish : MonoBehaviour
         if (canvas == null) return;
 
         // Title block: warmer ink on cream, airier tracking, a hairline to anchor the subtitle.
-        var title = FindText("柳湾物语");
+        var title = FindText("渡口灯火");
+        if (title == null) title = FindText("柳湾物语");   // 兼容旧场景名
         if (title != null)
         {
             title.color = Cream;
             title.characterSpacing = 6f;
         }
 
-        var latin = FindText("W I L L O W R E A C H");
+        var latin = FindText("F E R R Y   L I G H T S");
         if (latin != null)
         {
             latin.color = new Color32(217, 196, 143, 235);

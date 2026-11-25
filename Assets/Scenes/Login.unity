@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 257357405}
   - component: {fileID: 257357404}
   m_Layer: 0
-  m_Name: W I L L O W R E A C H
+  m_Name: F E R R Y   L I G H T S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: W I L L O W R E A C H
+  m_text: F E R R Y   L I G H T S
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d127676072bfdb64d8c47e803f20329e, type: 2}
   m_sharedMaterial: {fileID: -6988348488859397404, guid: d127676072bfdb64d8c47e803f20329e, type: 2}
@@ -2588,7 +2588,7 @@ GameObject:
   - component: {fileID: 440662864}
   - component: {fileID: 440662863}
   m_Layer: 0
-  m_Name: "\u67F3\u6E7E\u7269\u8BED"
+  m_Name: "\u6E21\u53E3\u706F\u706B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u67F3\u6E7E\u7269\u8BED"
+  m_text: "\u6E21\u53E3\u706F\u706B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d127676072bfdb64d8c47e803f20329e, type: 2}
   m_sharedMaterial: {fileID: -6988348488859397404, guid: d127676072bfdb64d8c47e803f20329e, type: 2}

@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
             return;
 
         healthText.text =
-            "HP:" +
+            "生命:" +
             StatsManager.Instance.currentHealth +
             "/" +
             StatsManager.Instance.maxHealth;

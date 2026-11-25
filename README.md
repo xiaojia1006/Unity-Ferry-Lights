@@ -1,5 +1,7 @@
 ﻿# 渡口灯火 · Ferry Lights
 
+仓库：https://github.com/xiaojia1006/Unity-Ferry-Lights
+
 《渡口灯火》是一部使用 Unity 制作的 2D 像素风治愈 RPG：在苇岸渡口修桥、点灯、钓鱼、煮汤。项目包含登录、探索、采集、钓鱼、烹饪、战斗、委托、昼夜和天气系统，适合作为 Unity 2D 游戏开发学习与作品展示项目。
 
 ## 项目特色

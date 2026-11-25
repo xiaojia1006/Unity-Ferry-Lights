@@ -76,11 +76,8 @@ public sealed class ChapterRoute : MonoBehaviour
 
     IEnumerator Travel()
     {
-        loading=true;SaveSystem.SaveNow();FishingRig2D.End();SceneManager.sceneLoaded+=Arrived;SceneManager.LoadScene(destination);yield break;
-    }
-    void Arrived(Scene scene,LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded-=Arrived; // The save system handles known destinations; defaults cover first visits.
-        var p=FindObjectOfType<PlayerMovement>();if(p!=null){p.transform.position=arrival;p.rb.position=arrival;p.rb.velocity=Vector2.zero;}
+        loading=true;SaveSystem.SaveNow();FishingRig2D.End();
+        SaveSystem.RequestArrival(destination,arrival);
+        SceneManager.LoadScene(destination);yield break;
     }
 }

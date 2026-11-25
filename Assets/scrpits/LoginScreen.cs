@@ -30,6 +30,7 @@ public sealed class LoginScreen : MonoBehaviour
     [Serializable] private class Response { public bool success; public string message; public string account; public string token; }
     private bool visible;
     private bool offlineOffered;
+    private bool serviceDown;
 
     private void Start()
     {
@@ -40,6 +41,23 @@ public sealed class LoginScreen : MonoBehaviour
         password.onValueChanged.AddListener(ClearMessage);
         account.Select();
         account.ActivateInputField();
+        StartCoroutine(PingService());
+    }
+
+    // 启动时先探一次账号服务：连不上就把登录页切成"游客试玩"，不要让玩家卡在输入框
+    private IEnumerator PingService()
+    {
+        using (var request = UnityWebRequest.Get(serviceUrl.TrimEnd('/') + "/health"))
+        {
+            request.timeout = 2;
+            yield return request.SendWebRequest();
+            serviceDown = request.result != UnityWebRequest.Result.Success;
+        }
+        if (!serviceDown) yield break;
+
+        if (submitLabel != null) submitLabel.text = "游客试玩";
+        if (welcomeLabel != null) welcomeLabel.text = "账号服务未启动 · 可直接游客试玩";
+        if (message != null) message.text = "进度只保存在本机；需要账号时先运行 Server\\启动账号服务.bat";
     }
 
     private void Update()
@@ -77,6 +95,13 @@ public sealed class LoginScreen : MonoBehaviour
     public void Submit()
     {
         if (busy) return;
+        // 服务不可用且没填账号：一键进入游客模式
+        if (serviceDown && !registering && string.IsNullOrWhiteSpace(account.text))
+        {
+            LoginSession.Set("离线游客", null);
+            SceneManager.LoadScene(SaveSystem.ResumeScene(firstGameScene));
+            return;
+        }
         if(offlineOffered&&!registering){LoginSession.Set("离线游客",null);password.text="";SceneManager.LoadScene(SaveSystem.ResumeScene(firstGameScene));return;}
         if (string.IsNullOrWhiteSpace(account.text))
         {

@@ -138,19 +138,19 @@ public class BackpackUI : MonoBehaviour
         var left = Rect("Player Panel",layout,new Vector2(-525,0),new Vector2(400,840));
         var right = Rect("Inventory Panel",layout,new Vector2(215,0),new Vector2(1040,840));
         Art("Player Ribbon",left.transform,theme.ribbon,new Vector2(0,340),new Vector2(360,96));
-        Text("ADVENTURER",left.transform,new Vector2(0,340),new Vector2(310,56),34);
+        Text("冒险者",left.transform,new Vector2(0,340),new Vector2(310,56),34);
         Art("Bag Ribbon",right.transform,theme.ribbon,new Vector2(0,340),new Vector2(600,96));
-        Text("BACKPACK",right.transform,new Vector2(0,340),new Vector2(500,56),40);
+        Text("背包",right.transform,new Vector2(0,340),new Vector2(500,56),40);
         Action("X",right.transform,new Vector2(455,345),new Vector2(64,64),()=>SetOpen(false));
         var portraitFrame = Art("Portrait Frame",left.transform,theme.slot,new Vector2(0,70),new Vector2(310,390));
         portraitFrame.gameObject.AddComponent<RectMask2D>();
         portraitRoot = Rect("Player Preview",portraitFrame.transform,Vector2.zero,new Vector2(240,300));
         stats = Text("",left.transform,new Vector2(0,-210),new Vector2(300,160),28);
-        Text("YOUR CHARACTER",left.transform,new Vector2(0,-60),new Vector2(280,45),22);
-        Text("B / ESC  CLOSE",left.transform,new Vector2(0,-350),new Vector2(300,46),24);
-        Action("ALL",right.transform,new Vector2(-375,265),new Vector2(160,54),()=>SetFilter(0));
-        Action("USABLE",right.transform,new Vector2(-185,265),new Vector2(180,54),()=>SetFilter(1));
-        Action("MATERIALS",right.transform,new Vector2(30,265),new Vector2(210,54),()=>SetFilter(2));
+        Text("角色",left.transform,new Vector2(0,-60),new Vector2(280,45),22);
+        Text("B / ESC  关闭",left.transform,new Vector2(0,-350),new Vector2(300,46),24);
+        Action("全部",right.transform,new Vector2(-375,265),new Vector2(160,54),()=>SetFilter(0));
+        Action("可用",right.transform,new Vector2(-185,265),new Vector2(180,54),()=>SetFilter(1));
+        Action("材料",right.transform,new Vector2(30,265),new Vector2(210,54),()=>SetFilter(2));
         capacity = Text("",right.transform,new Vector2(330,265),new Vector2(260,48),24);
         for (int i = 0; i < inventory.itemSlots.Length; i++)
         {
@@ -168,10 +168,10 @@ public class BackpackUI : MonoBehaviour
         var detail = Art("Item Details",right.transform,theme.slot,new Vector2(335,-35),new Vector2(272,490));
         detail.color = new Color(1,1,1,0.8f);
         selectedIcon = Art("Selected Item",detail.transform,null,new Vector2(0,170),new Vector2(145,145)); selectedIcon.preserveAspect = true;
-        description = Text("SELECT AN ITEM",detail.transform,new Vector2(0,-10),new Vector2(226,240),24);
-        useButton = Action("USE",detail.transform,new Vector2(0,-174),new Vector2(208,55),UseSelected);
+        description = Text("选择一件物品",detail.transform,new Vector2(0,-10),new Vector2(226,240),24);
+        useButton = Action("使用",detail.transform,new Vector2(0,-174),new Vector2(208,55),UseSelected);
         dropButton = Action("DROP 1",right.transform,new Vector2(335,-318),new Vector2(210,55),DropSelected);
-        Action("SORT BAG",right.transform,new Vector2(-350,-340),new Vector2(210,55),()=>{ inventory.SortBackpack(); selected=-1; Refresh(); });
+        Action("整理背包",right.transform,new Vector2(-350,-340),new Vector2(210,55),()=>{ inventory.SortBackpack(); selected=-1; Refresh(); });
         Text("DRAG: MOVE / MERGE    SHIFT + DRAG: SPLIT",right.transform,new Vector2(-10,-340),new Vector2(445,62),19);
         status = Text("FIRST 5 SLOTS SHARE YOUR QUICK BAR",right.transform,new Vector2(0,-387),new Vector2(910,35),19);
         dragIcon = Art("Dragged Item",root.transform,null,Vector2.zero,new Vector2(78,78)); dragIcon.preserveAspect = true;
@@ -203,16 +203,16 @@ public class BackpackUI : MonoBehaviour
     {
         var slot=Selected(); if (slot == null || !IsUsable(slot.itemSO)) return;
         if(ArrowCrafting.IsMaterial(slot.itemSO))
-        {bool crafted=ArrowCrafting.Craft();Refresh();status.text=crafted?"CRAFTED 5 ARROWS":"NEED 1 BONE AND FREE BAG SPACE";return;}
+        {bool crafted=ArrowCrafting.Craft();Refresh();status.text=crafted?"已合成 5 支箭":"需要 1 根骨头 + 背包空位";return;}
         int before=slot.quantity; inventory.UseItem(slot); Refresh();
-        status.text=slot.quantity < before ? "ITEM USED" : "NO EFFECT - CHECK YOUR HEALTH";
+        status.text=slot.quantity < before ? "已使用" : "没有效果 · 生命已满";
     }
 
     private void DropSelected()
     {
         var slot=Selected(); if (slot == null || slot.itemSO == null) return;
         int before=slot.quantity; inventory.DropLoot(slot); Refresh();
-        status.text=slot.quantity < before ? "DROPPED NEAR YOUR CHARACTER" : "CANNOT DROP HERE";
+        status.text=slot.quantity < before ? "已丢在脚边" : "这里不能丢弃";
     }
 
     public void BeginDrag(int index, PointerEventData data)
@@ -235,7 +235,7 @@ public class BackpackUI : MonoBehaviour
     {
         if (dragging < 0) return;
         bool moved=inventory.MoveItem(dragging,target,splitDrag); selected=target;
-        EndDrag(); Refresh(); status.text=moved ? "ITEM MOVED" : "NO ROOM IN THIS STACK";
+        EndDrag(); Refresh(); status.text=moved ? "已移动" : "这堆放不下了";
     }
 
     public void EndDrag() { dragging=-1; if (dragIcon != null) dragIcon.gameObject.SetActive(false); }
@@ -254,27 +254,27 @@ public class BackpackUI : MonoBehaviour
             cell.quantity.text=has?slot.quantity.ToString():"";
             cell.background.color=i==selected ? new Color(1,0.84f,0.42f) : Color.white;
         }
-        capacity.text=occupied+" / "+cells.Count+" SLOTS";
+        capacity.text=occupied+" / "+cells.Count+" 格";
         var chosen=Selected(); var item=chosen != null ? chosen.itemSO : null;
         selectedIcon.gameObject.SetActive(item != null);
         if(item != null)
         {
             selectedIcon.sprite=item.icon;
             string effects="";
-            if(item.currentHealth>0) effects+="\nHEAL +"+item.currentHealth;
-            if(item.maxHealth>0) effects+="\nMAX HP +"+item.maxHealth;
-            if(item.damage>0) effects+="\nDAMAGE +"+item.damage;
-            if(item.speed>0) effects+="\nSPEED +"+item.speed;
-            if(item.duration>0) effects+="\n"+item.duration+" SECONDS";
-            description.text=item.itemName+"\n\n"+item.itemDescription+effects+"\n\nSTACK "+chosen.quantity+" / "+Mathf.Max(1,item.stackSize);
+            if(item.currentHealth>0) effects+="\n回复 +"+item.currentHealth;
+            if(item.maxHealth>0) effects+="\n生命上限 +"+item.maxHealth;
+            if(item.damage>0) effects+="\n攻击 +"+item.damage;
+            if(item.speed>0) effects+="\n移速 +"+item.speed;
+            if(item.duration>0) effects+="\n"+item.duration+" 秒";
+            description.text=item.itemName+"\n\n"+item.itemDescription+effects+"\n\n堆叠 "+chosen.quantity+" / "+Mathf.Max(1,item.stackSize);
             description.enableAutoSizing=true; description.fontSizeMin=16; description.fontSizeMax=24;
         }
-        else description.text="SELECT AN ITEM\n\nDOUBLE CLICK TO USE\nRIGHT CLICK TO DROP 1";
-        useButton.GetComponentInChildren<TMP_Text>().text=ArrowCrafting.IsMaterial(item)?"CRAFT 5 ARROWS":"USE";
-        if(ArrowCrafting.IsMaterial(item))description.text+="\n\n1 BONE -> 5 ARROWS";
+        else description.text="选择一件物品\n\n双击使用\n右键丢弃 1 个";
+        useButton.GetComponentInChildren<TMP_Text>().text=ArrowCrafting.IsMaterial(item)?"合成 5 支箭":"使用";
+        if(ArrowCrafting.IsMaterial(item))description.text+="\n\n1 骨头 -> 5 支箭";
         useButton.interactable=IsUsable(item); dropButton.interactable=item != null;
         var s=StatsManager.Instance; var exp=FindObjectOfType<ExpManager>();
-        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\nHP "+s.currentHealth+" / "+s.maxHealth+"\nDAMAGE "+NightCombat2D.PlayerDamage(s.damage)+"   SPEED "+s.speed+"\nGOLD "+inventory.gold+"\nARROWS "+ArrowCrafting.Count;
+        if(s != null) stats.text="Lv."+(exp != null ? exp.level : 1)+"\n生命 "+s.currentHealth+" / "+s.maxHealth+"\n攻击 "+NightCombat2D.PlayerDamage(s.damage)+"   移速 "+s.speed+"\n金币 "+inventory.gold+"\n箭矢 "+ArrowCrafting.Count;
     }
 
     private void UpdatePortrait()

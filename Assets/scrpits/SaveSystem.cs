@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 // Versioned per-account snapshot. Restoration runs after scene Start initialization.
 [DefaultExecutionOrder(1000)]
@@ -71,11 +72,13 @@ public sealed class SaveSystem : MonoBehaviour
                 foreach(var drop in world.drops){var item=catalog.Find(drop.id);if(item==null||drop.quantity<=0)continue;var loot=Instantiate(catalog.lootPrefab,new Vector3(drop.x,drop.y,0),Quaternion.identity);loot.Initialize(item,drop.quantity);}
             }
             RestorePlayer(world);
+            if(hasPending&&pendingScene==scene.name){ApplyPlayer(pendingPos);hasPending=false;}
             var n=DayNight2D.Instance;if(n!=null){n.SetPhase((DayNight2D.Phase)Mathf.Clamp(world.phase,0,3));typeof(DayNight2D).GetProperty("PhaseSeconds").GetSetMethod(true).Invoke(n,new object[]{world.phaseSeconds});n.Advance(0);}
         }
-        else if(data.maxHp>0)RestorePlayer(null);
+        else if(data.maxHp>0)RestorePlayer(null);   // 只恢复数值，不挪人
         foreach(var panel in FindObjectsOfType<StatsUI>())panel.UpdataAllStats();
         ready=true;timer=0;
+        ShowSaved();
         var main=FindObjectOfType<RPG2Adventure>();if(main!=null&&main.TreasureClaimed)main.Notify("本章完成 · 苇岸已安定，可继续探索或前往柳湾。进度已保存。");
     }
     static IEnumerable<Component> Components(Scene scene)
@@ -133,9 +136,51 @@ public sealed class SaveSystem : MonoBehaviour
     public static void ReloadFromDisk(){if(Instance==null)return;Instance.ready=false;Instance.data=null;SceneManager.LoadScene(SceneManager.GetActiveScene().name);}
     bool checkpoint;
     public static void Checkpoint(){if(Instance!=null&&Instance.ready)Instance.checkpoint=true;}
-    void LateUpdate(){if(!checkpoint)return;checkpoint=false;SaveNow();}
-    void Update(){if(!ready)return;timer+=Time.unscaledDeltaTime;if(timer>=2){timer=0;SaveNow();}}
+
+    TMP_Text savedTip;float tipTimer;
+    // 右下角极轻的一行「已记录」，只在读档完成和检查点时出现
+    void ShowSaved()
+    {
+        if(savedTip==null)
+        {
+            var canvasGo=new GameObject("Save tip canvas");
+            var canvas=canvasGo.AddComponent<Canvas>();
+            canvas.renderMode=RenderMode.ScreenSpaceOverlay;canvas.sortingOrder=32760;
+            canvasGo.AddComponent<UnityEngine.UI.CanvasScaler>();
+            var textGo=new GameObject("tip");
+            textGo.transform.SetParent(canvasGo.transform,false);
+            savedTip=textGo.AddComponent<TextMeshProUGUI>();
+            savedTip.font=Resources.Load<TMP_FontAsset>("Settings/Chinese");
+            savedTip.fontSize=20;savedTip.alignment=TextAlignmentOptions.BottomRight;
+            savedTip.color=new Color32(232,220,192,0);savedTip.text="进度已记录";
+            var rt=savedTip.rectTransform;
+            rt.anchorMin=new Vector2(1,0);rt.anchorMax=new Vector2(1,0);rt.pivot=new Vector2(1,0);
+            rt.anchoredPosition=new Vector2(-28,24);rt.sizeDelta=new Vector2(220,40);
+        }
+        tipTimer=1.6f;
+    }
+    void LateUpdate(){if(!checkpoint)return;checkpoint=false;SaveNow();ShowSaved();}
+    void Update()
+    {
+        if(ready){timer+=Time.unscaledDeltaTime;if(timer>=2){timer=0;SaveNow();}}
+        if(savedTip!=null)
+        {
+            tipTimer=Mathf.Max(0,tipTimer-Time.unscaledDeltaTime);
+            var c=savedTip.color;c.a=Mathf.Clamp01(tipTimer);savedTip.color=c;
+        }
+    }
     public static void SaveNow(){if(Instance!=null)Instance.Write();}
+
+    // 场景传送的落点：由 ChapterRoute 请求，读档时统一应用，避免和存档位置互相覆盖
+    static string pendingScene;static Vector2 pendingPos;static bool hasPending;
+    public static void RequestArrival(string scene,Vector2 pos){pendingScene=scene;pendingPos=pos;hasPending=true;}
+    static void ApplyPlayer(Vector2 at)
+    {
+        var p=UnityEngine.Object.FindObjectOfType<PlayerMovement>();
+        if(p==null)return;
+        p.transform.position=new Vector3(at.x,at.y,0);
+        if(p.rb!=null){p.rb.position=at;p.rb.velocity=Vector2.zero;}
+    }
     void Write()
     {
         if(!ready||data==null||SceneManager.GetActiveScene().name=="Login")return;
